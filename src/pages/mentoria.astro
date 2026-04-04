@@ -49,10 +49,10 @@ const modalidades = [
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {modalidades.map((mod) => (
-            <article class="p-8 border border-gold/20 rounded-sm hover:border-gold/50 transition-all duration-500">
+            <article class="p-8 border border-gold/20 rounded-sm hover:border-gold/50 transition-all duration-500 flex flex-col">
               <h3 class="font-display text-xl font-semibold text-gold mb-3">{mod.name}</h3>
               <p class="font-body font-light text-parchment/70 leading-relaxed text-sm mb-6">{mod.description}</p>
-              <ul class="space-y-2 mb-8">
+              <ul class="space-y-2 mb-8 flex-grow">
                 {mod.includes.map((item) => (
                   <li class="flex items-start gap-2 font-body font-light text-parchment/60 text-sm">
                     <span class="text-gold mt-0.5">✦</span>
@@ -60,6 +60,14 @@ const modalidades = [
                   </li>
                 ))}
               </ul>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-button-outline text-center"
+              >
+                Consultar por WhatsApp
+              </a>
             </article>
           ))}
         </div>
