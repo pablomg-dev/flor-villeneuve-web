@@ -1,0 +1,39 @@
+---
+import ServiceCard from '../ui/ServiceCard.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const services = [
+  {
+    title: 'Tarot',
+    description: 'Lectura del tarot akáshico como herramienta de autoconocimiento profundo. Cada carta es un símbolo vivo que habla de tu historia, tus sombras y tu luz.',
+    icon: '☽',
+    href: '/formacion/tarot',
+  },
+  {
+    title: 'Astrología',
+    description: 'Astrología simbólica y vivencial. Tu carta natal como mapa del alma, los tránsitos como clima interior. Un lenguaje ancestral para leer tu presente.',
+    icon: '✦',
+    href: '/formacion/astrologia',
+  },
+  {
+    title: 'Numerología',
+    description: 'Los números como lenguaje simbólico. Camino de vida, expresión, alma y ciclos. Una herramienta más para comprender tu diseño único.',
+    icon: '◈',
+    href: '/formacion/numerologia',
+  },
+];
+---
+
+<section class="section-padding bg-deep">
+  <div class="container-padding">
+    <SectionTitle
+      title="Tres lenguajes, un camino"
+      subtitle="Tarot, astrología y numerología: tres formas de leer lo simbólico y acompañar procesos de transformación."
+    />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <ServiceCard {...service} />
+      ))}
+    </div>
+  </div>
+</section>

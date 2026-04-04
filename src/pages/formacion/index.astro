@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Button from '../../components/ui/Button.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+
+const disciplines = [
+  {
+    title: 'Tarot',
+    description: 'El tarot akáshico como herramienta de autoconocimiento. Desde la iniciación hasta la lectura para otros, un camino de símbolos y significados.',
+    href: '/formacion/tarot',
+    icon: '☽',
+  },
+  {
+    title: 'Astrología',
+    description: 'Astrología simbólica y vivencial. Carta natal, tránsitos, sinastrías, revoluciones solares. Tu mapa del cielo como espejo del alma.',
+    href: '/formacion/astrologia',
+    icon: '✦',
+  },
+  {
+    title: 'Numerología',
+    description: 'Los números como lenguaje simbólico. Camino de vida, expresión, alma, karmas y ciclos anuales. Un sistema que complementa tarot y astrología.',
+    href: '/formacion/numerologia',
+    icon: '◈',
+  },
+];
+---
+
+<BaseLayout title="Formación" description="Escuela esotérica de Florencia Villeneuve. Clases de tarot, astrología y numerología. Online, individuales o de a 2 personas, desde los 9 años." canonical="/formacion">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <SectionTitle
+          title="Escuela esotérica de Florencia Villeneuve"
+          subtitle="Clases de hasta 2 personas, desde 9 años, online. Tres disciplinas, un mismo camino simbólico."
+        />
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+          {disciplines.map((disc) => (
+            <a href={disc.href} class="group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 block">
+              <div class="text-gold text-4xl mb-4">{disc.icon}</div>
+              <h3 class="font-display text-2xl font-semibold text-parchment mb-3 group-hover:text-gold transition-colors duration-300">{disc.title}</h3>
+              <p class="font-body font-light text-parchment/70 leading-relaxed text-sm">{disc.description}</p>
+              <span class="inline-block mt-4 font-body font-light text-gold text-sm tracking-wide border-b border-gold/30 pb-0.5 group-hover:border-gold transition-colors duration-300">
+                Ver programa
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-body font-light text-parchment/60 leading-relaxed mb-8">
+            Todas las clases son online, individuales o de a 2 personas. Se adaptan al ritmo y la necesidad de cada estudiante. No hay edad mínima para empezar — hay ganas de aprender.
+          </p>
+          <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

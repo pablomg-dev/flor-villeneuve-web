@@ -1,0 +1,37 @@
+---
+import Button from '../ui/Button.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+---
+
+<section class="section-padding bg-mist">
+  <div class="container-padding">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="aspect-[3/4] bg-night/10 rounded-sm flex items-center justify-center border border-earth/10">
+          <span class="font-heading font-light text-earth/40 text-sm">Foto de Florencia</span>
+        </div>
+      </div>
+      <div>
+        <SectionTitle
+          title="Quién soy"
+          subtitle="Buscadora, escritora, mentora."
+          light={true}
+        />
+        <div class="space-y-4 mt-6">
+          <p class="font-body font-light text-earth/80 leading-relaxed">
+            Florencia Villeneuve es mentora esotérica, astróloga y escritora con base en Montevideo, Uruguay. Su camino no empezó con títulos sino con preguntas — esas que no se responden con Google ni con manuales.
+          </p>
+          <p class="font-body font-light text-earth/80 leading-relaxed">
+            Llegó al tarot, la astrología y la numerología por necesidad de comprender. Y lo que encontró fue un lenguaje: simbólico, profundo, vivo. Hoy lo comparte con quienes se animan a mirar su propia historia con otros ojos.
+          </p>
+          <p class="font-body font-light text-earth/80 leading-relaxed">
+            También escribe. Su libro <em class="text-gold">La visceversa de un escondite</em> es una exploración de esos bordes entre lo filosófico y lo poético, entre lo que se dice y lo que se calla.
+          </p>
+        </div>
+        <div class="mt-8">
+          <Button href="/bio" variant="outline">Leer bio completa</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+---
+
+<BaseLayout title="Bio" description="Bio de Florencia Villeneuve — mentora esotérica, astróloga y escritora en Montevideo, Uruguay." canonical="/bio">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <div class="max-w-3xl mx-auto">
+          <SectionTitle
+            title="Florencia Villeneuve"
+            subtitle="Buscadora, escritora, mentora."
+          />
+
+          <div class="aspect-[3/4] max-w-sm mx-auto bg-night/50 rounded-sm flex items-center justify-center border border-gold/20 mb-12">
+            <span class="font-heading font-light text-gold/40 text-sm">Foto de Florencia</span>
+          </div>
+
+          <div class="space-y-6">
+            <p class="font-body font-light text-parchment/80 leading-relaxed">
+              Florencia Villeneuve es, ante todo, una buscadora. De esas personas que no se conforman con la superficie de las cosas y que encuentran en lo simbólico un lenguaje más honesto que el literal. Vive en Montevideo, Uruguay, y desde ahí teje su trabajo como mentora esotérica, astróloga y escritora.
+            </p>
+
+            <p class="font-body font-light text-parchment/80 leading-relaxed">
+              Su camino hacia el mundo esotérico no fue académico ni planificado. Fue orgánico, casi inevitable. Llegó al tarot, la astrología y la numerología por necesidad de comprenderse a sí misma y al mundo que la rodeaba. Y lo que encontró fue algo que no tenía nombre: una forma de leer la realidad que integra lo racional con lo intuitivo, lo visible con lo invisible.
+            </p>
+
+            <p class="font-body font-light text-parchment/80 leading-relaxed">
+              Hoy lo que más le interesa es compartir ese lenguaje. Acompañar a otros en sus propios procesos de autoconocimiento. No desde el saber absoluto sino desde la escucha atenta y la integración de herramientas. También escribe, porque hay cosas que solo se pueden decir así: entre lo filosófico y lo poético, entre lo que se dice y lo que se calla.
+            </p>
+
+            <blockquote class="border-l-2 border-gold/40 pl-6 py-4 my-10">
+              <p class="font-display text-xl italic text-gold/80 leading-relaxed">
+                "Hay verdades que solo se cuentan de costado."
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

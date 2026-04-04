@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Button from '../../components/ui/Button.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+---
+
+<BaseLayout title="Numerología" description="Curso de Numerología con Florencia Villeneuve. Camino de vida, expresión, alma, karmas y ciclos anuales. Clases online." canonical="/formacion/numerologia">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <SectionTitle
+          title="Numerología"
+          subtitle="Los números como lenguaje simbólico. Tu diseño único leído en cifras."
+        />
+
+        <div class="max-w-3xl mx-auto space-y-12">
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">La numerología como lenguaje simbólico</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              La numerología no es superstición ni cálculo frío. Es un sistema simbólico tan antiguo como la humanidad misma. Cada número contiene un arquetipo, una energía, una forma de estar en el mundo. Tu fecha de nacimiento y tu nombre revelan un diseño único que vale la pena conocer.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-6">Contenidos</h3>
+            <div class="space-y-6">
+              {[
+                { title: 'Número de camino de vida', desc: 'El propósito central de tu existencia, calculado desde tu fecha de nacimiento.' },
+                { title: 'Número de expresión', desc: 'Tus talentos y capacidades naturales, revelados por tu nombre completo.' },
+                { title: 'Número del alma', desc: 'Lo que tu ser más profundo desea, lo que te mueve por dentro.' },
+                { title: 'Karmas', desc: 'Lecciones pendientes y deudas del alma que aparecen en tu mapa numérico.' },
+                { title: 'Ciclos anuales', desc: 'Cómo leer cada año de tu vida a través de la numerología.' },
+              ].map((item) => (
+                <div class="p-6 border border-gold/15 rounded-sm">
+                  <h4 class="font-heading font-light text-parchment text-lg mb-2">{item.title}</h4>
+                  <p class="font-body font-light text-parchment/60 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Integración con astrología y tarot</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              En la visión de Florencia, la numerología no funciona aislada. Se integra naturalmente con la astrología y el tarot, formando un sistema de lectura completo. Los números dialogan con los planetas y los arcanos, y juntos ofrecen una imagen más rica y matizada de cada persona.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Modalidad</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              Clases online, individuales o de a 2 personas. Se adapta al ritmo y nivel de cada estudiante.
+            </p>
+          </div>
+
+          <div class="text-center pt-4">
+            <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

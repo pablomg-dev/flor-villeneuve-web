@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'outline';
+  children: string;
+  external?: boolean;
+}
+
+const { href, variant = 'primary', children, external = false } = Astro.props;
+const target = external ? '_blank' : undefined;
+const rel = external ? 'noopener noreferrer' : undefined;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class:list={[
+    variant === 'primary' ? 'cta-button' : 'cta-button-outline',
+  ]}
+>
+  {children}
+</a>

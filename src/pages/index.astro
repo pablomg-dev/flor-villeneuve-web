@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Services from '../components/sections/Services.astro';
+import About from '../components/sections/About.astro';
+import BookPreview from '../components/sections/BookPreview.astro';
+import Contact from '../components/sections/Contact.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout title="Inicio" description="Florencia Villeneuve — Mentora esotérica, astróloga y escritora en Montevideo, Uruguay. Mentoría personalizada, formación esotérica y creación artística.">
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+
+    <section class="section-padding bg-mist">
+      <div class="container-padding text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink tracking-wide">¿Qué estás buscando?</h2>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mt-10">
+          <Button href="/formacion" variant="outline">Quiero aprender</Button>
+          <Button href="/mentoria" variant="outline">Quiero mentoría</Button>
+          <Button href="/packs" variant="outline">Packs de consulta</Button>
+        </div>
+      </div>
+    </section>
+
+    <About />
+    <BookPreview />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Florencia Villeneuve",
+  "url": "https://florhesiendo.com",
+  "jobTitle": "Mentora esotérica",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montevideo",
+    "addressCountry": "UY"
+  },
+  "sameAs": [
+    "https://instagram.com/florhesiendo"
+  ]
+}
+</script>

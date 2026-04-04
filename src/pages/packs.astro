@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import PacksSection from '../components/sections/Packs.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import Button from '../components/ui/Button.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+---
+
+<BaseLayout title="Packs" description="Packs de consultas esotéricas con Florencia Villeneuve. Propuestas claras para cada necesidad: sesión única, proceso de 4 sesiones o ciclo anual." canonical="/packs">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <SectionTitle
+          title="Packs de consulta"
+          subtitle="Propuestas claras con nombre, qué incluye, para qué sirve y cómo se coordinan. Sin precios en la web — la coordinación es directa."
+        />
+      </div>
+    </section>
+    <PacksSection />
+    <section class="section-padding bg-mist">
+      <div class="container-padding text-center">
+        <h3 class="font-display text-2xl font-semibold text-ink mb-4">¿No sabés cuál elegir?</h3>
+        <p class="font-body font-light text-earth/70 leading-relaxed max-w-xl mx-auto mb-8">
+          Escribile a Florencia por WhatsApp y te ayuda a encontrar la propuesta que mejor se adapta a tu momento.
+        </p>
+        <Button href={whatsappUrl} variant="outline" external>Hablemos por WhatsApp</Button>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import PackCard from '../ui/PackCard.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+
+const packs = [
+  {
+    name: 'Pack Inicio',
+    tagline: 'Una primera aproximación',
+    description: 'Ideal para quien quiere conocer el trabajo con Florencia a través de una sesión única y profunda.',
+    includes: [
+      'Lectura de tarot akáshico o carta natal introductoria',
+      'Sesión individual online',
+      'Devuelta personalizada',
+    ],
+    cta: whatsappUrl,
+  },
+  {
+    name: 'Pack Proceso',
+    tagline: 'Acompañamiento de 4 sesiones',
+    description: 'Para quienes quieren un seguimiento mensual con profundidad y continuidad en su proceso.',
+    includes: [
+      '4 sesiones de acompañamiento',
+      'Seguimiento personalizado entre sesiones',
+      'Material escrito complementario',
+      'Carta-poema de regalo',
+      'Temáticas: autoconocimiento, relaciones, finanzas, proyectos',
+    ],
+    cta: whatsappUrl,
+  },
+  {
+    name: 'Pack Anual',
+    tagline: 'Ciclo completo de sesiones',
+    description: 'Seguimiento anual con revisiones por tránsitos y ciclos. Para integrar lo esotérico en la vida cotidiana.',
+    includes: [
+      'Ciclo de sesiones a lo largo del año',
+      'Revisiones por tránsitos astrológicos',
+      'Acompañamiento en ciclos personales',
+      'Integración en la vida cotidiana',
+    ],
+    cta: whatsappUrl,
+  },
+];
+---
+
+<section class="section-padding bg-deep">
+  <div class="container-padding">
+    <SectionTitle
+      title="Packs de consulta"
+      subtitle="Propuestas claras con nombre, propósito y camino. Sin precios en la web — la coordinación es directa."
+    />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {packs.map((pack) => (
+        <PackCard {...pack} />
+      ))}
+    </div>
+  </div>
+</section>

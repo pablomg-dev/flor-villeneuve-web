@@ -1,0 +1,142 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+---
+
+<section class="section-padding bg-night">
+  <div class="container-padding">
+    <SectionTitle
+      title="Contacto"
+      subtitle="Escribile a Florencia. Toda consulta se responde con calma y atención."
+    />
+    <div class="max-w-xl mx-auto">
+      <form id="contact-form" class="space-y-6">
+        <div>
+          <label for="name" class="block font-body font-light text-parchment/70 text-sm mb-2">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+            placeholder="Tu nombre"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block font-body font-light text-parchment/70 text-sm mb-2">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+            placeholder="tu@email.com"
+          />
+        </div>
+
+        <div>
+          <label for="phone" class="block font-body font-light text-parchment/70 text-sm mb-2">Teléfono <span class="text-parchment/40">(opcional)</span></label>
+          <div class="flex gap-3">
+            <select
+              id="country-code"
+              name="countryCode"
+              class="w-24 px-3 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+            >
+              <option value="+598">+598</option>
+              <option value="+54">+54</option>
+              <option value="+55">+55</option>
+              <option value="+1">+1</option>
+              <option value="+34">+34</option>
+              <option value="+44">+44</option>
+              <option value="+33">+33</option>
+              <option value="+49">+49</option>
+              <option value="+39">+39</option>
+              <option value="+52">+52</option>
+              <option value="+56">+56</option>
+              <option value="+57">+57</option>
+              <option value="+51">+51</option>
+            </select>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="flex-1 px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+              placeholder="Tu teléfono"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block font-body font-light text-parchment/70 text-sm mb-2">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="w-full px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300 resize-none"
+            placeholder="Contale a Florencia qué necesitás..."
+          ></textarea>
+        </div>
+
+        <div id="form-status" class="hidden"></div>
+
+        <button
+          type="submit"
+          class="cta-button w-full"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+
+      <div class="text-center mt-8">
+        <p class="font-body font-light text-parchment/50 text-sm mb-3">O escribile directo por WhatsApp</p>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-body font-light text-gold text-sm tracking-wide border-b border-gold/30 pb-0.5 hover:border-gold transition-colors duration-300"
+        >
+          +598 92 497 675
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const statusEl = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok && statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = 'Mensaje enviado con éxito. Florencia te responderá pronto.';
+        statusEl.className = 'text-gold font-body font-light text-sm mt-4';
+        form.reset();
+      } else if (statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = 'Hubo un error al enviar el mensaje. Intentá de nuevo o escribí por WhatsApp.';
+        statusEl.className = 'text-red-400 font-body font-light text-sm mt-4';
+      }
+    } catch {
+      if (statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = 'Error de conexión. Intentá de nuevo o escribí por WhatsApp.';
+        statusEl.className = 'text-red-400 font-body font-light text-sm mt-4';
+      }
+    }
+  });
+</script>

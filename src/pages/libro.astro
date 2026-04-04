@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import Button from '../components/ui/Button.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+---
+
+<BaseLayout title="Libro" description="La visceversa de un escondite — Libro de Florencia Villeneuve. Textos filosóficos de autoficción poética. Recibí un fragmento por email." canonical="/libro">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <SectionTitle
+              title="La visceversa de un escondite"
+              subtitle="Textos filosóficos de autoficción poética."
+            />
+            <div class="space-y-4 mt-6">
+              <p class="font-body font-light text-parchment/70 leading-relaxed">
+                Libro independiente escrito en Montevideo, editado e impreso en Buenos Aires, 2022.
+              </p>
+              <p class="font-body font-light text-parchment/70 leading-relaxed">
+                Un recorrido por los bordes entre lo filosófico y lo poético. Lenguaje intelectual y coloquial al mismo tiempo. Para quienes se animan a leer con el cuerpo y no solo con la cabeza.
+              </p>
+              <p class="font-body font-light text-parchment/60 leading-relaxed text-sm">
+                Entre lo que se dice y lo que se calla, entre la ficción y la vida, entre lo que se esconde y lo que se muestra.
+              </p>
+            </div>
+            <div class="mt-8">
+              <Button href={whatsappUrl} variant="outline" external>Consultar por WhatsApp</Button>
+            </div>
+          </div>
+          <div>
+            <div class="aspect-[3/4] bg-night/50 rounded-sm flex items-center justify-center border border-gold/20">
+              <span class="font-heading font-light text-gold/40 text-sm">Portada del libro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding bg-mist">
+      <div class="container-padding">
+        <SectionTitle
+          title="Recibí un fragmento"
+          subtitle="Dejanos tu nombre y email y te enviamos un fragmento del libro."
+          light={true}
+        />
+        <div class="max-w-md mx-auto">
+          <form id="book-form" class="space-y-6">
+            <div>
+              <label for="name" class="block font-body font-light text-earth/70 text-sm mb-2">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 bg-white border border-earth/20 rounded-sm text-ink font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+                placeholder="Tu nombre"
+              />
+            </div>
+            <div>
+              <label for="email" class="block font-body font-light text-earth/70 text-sm mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-white border border-earth/20 rounded-sm text-ink font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+                placeholder="tu@email.com"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block font-body font-light text-earth/70 text-sm mb-2">Teléfono <span class="text-earth/40">(opcional)</span></label>
+              <div class="flex gap-3">
+                <select
+                  id="book-country-code"
+                  name="countryCode"
+                  class="w-24 px-3 py-3 bg-white border border-earth/20 rounded-sm text-ink font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+                >
+                  <option value="+598">+598</option>
+                  <option value="+54">+54</option>
+                  <option value="+55">+55</option>
+                  <option value="+1">+1</option>
+                  <option value="+34">+34</option>
+                </select>
+                <input
+                  type="tel"
+                  id="book-phone"
+                  name="phone"
+                  class="flex-1 px-4 py-3 bg-white border border-earth/20 rounded-sm text-ink font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+                  placeholder="Tu teléfono"
+                />
+              </div>
+            </div>
+            <div id="book-status" class="hidden"></div>
+            <button type="submit" class="cta-button w-full">
+              Recibir fragmento
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('book-form') as HTMLFormElement;
+  const statusEl = document.getElementById('book-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, subject: 'Solicitud de fragmento — La visceversa de un escondite' }),
+      });
+
+      if (response.ok && statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = '¡Listo! Te enviaremos un fragmento pronto.';
+        statusEl.className = 'text-gold font-body font-light text-sm mt-4';
+        form.reset();
+      } else if (statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = 'Hubo un error. Intentá de nuevo.';
+        statusEl.className = 'text-red-400 font-body font-light text-sm mt-4';
+      }
+    } catch {
+      if (statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = 'Error de conexión. Intentá de nuevo.';
+        statusEl.className = 'text-red-400 font-body font-light text-sm mt-4';
+      }
+    }
+  });
+</script>

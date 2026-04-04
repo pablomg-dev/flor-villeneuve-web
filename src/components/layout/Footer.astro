@@ -1,0 +1,79 @@
+---
+import type { NavItem } from '../../types';
+
+const navItems: NavItem[] = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Mentoría', href: '/mentoria' },
+  { label: 'Formación', href: '/formacion' },
+  { label: 'Packs', href: '/packs' },
+  { label: 'Creativos', href: '/creativos' },
+  { label: 'Bio', href: '/bio' },
+  { label: 'Libro', href: '/libro' },
+  { label: 'Contacto', href: '/contacto' },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-night border-t border-gold/10 section-padding">
+  <div class="container-padding">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <a href="/" class="font-display text-2xl font-semibold text-gold tracking-wide">
+          Florencia Villeneuve
+        </a>
+        <p class="font-body font-light text-parchment/60 mt-3 text-sm leading-relaxed">
+          Mentora esotérica · Formación · Creación
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-light text-gold tracking-wide mb-4">Navegación</h3>
+        <ul class="space-y-2">
+          {navItems.map((item) => (
+            <li>
+              <a href={item.href} class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-light text-gold tracking-wide mb-4">Conectá</h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="https://wa.me/59892497675"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300"
+            >
+              WhatsApp: +598 92 497 675
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/florhesiendo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300"
+            >
+              @florhesiendo
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gold-divider mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body font-light text-parchment/40 text-xs">
+        &copy; {currentYear} Florencia Villeneuve. Todos los derechos reservados.
+      </p>
+      <p class="font-body font-light text-parchment/40 text-xs">
+        Desarrollado con intención y símbolo.
+      </p>
+    </div>
+  </div>
+</footer>

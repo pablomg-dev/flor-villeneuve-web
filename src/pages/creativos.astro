@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import Button from '../components/ui/Button.astro';
+import type { SongProject } from '../types';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+
+const songProjects: SongProject[] = [
+  {
+    title: 'Título de la canción o proyecto',
+    description: 'Descripción del proyecto musical o composición. Este es un placeholder que se puede completar fácilmente con el contenido real.',
+    duration: '3:45',
+    year: '2024',
+  },
+  {
+    title: 'Otro proyecto musical',
+    description: 'Segunda entrada de ejemplo. Reemplazar con el contenido real de Florencia cuando esté disponible.',
+    duration: '4:12',
+    year: '2024',
+  },
+];
+---
+
+<BaseLayout title="Creativos" description="Talleres de composición y creación artística con Florencia Villeneuve. Identidad artística, dirección artística, composición, escritura y música." canonical="/creativos">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <SectionTitle
+          title="Creativos"
+          subtitle="Talleres de composición y creación artística. Técnica al servicio del deseo creativo."
+        />
+
+        <div class="max-w-3xl mx-auto space-y-12">
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Encontrar tu identidad artística</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              Los talleres creativos de Florencia están pensados para quienes sienten el impulso de crear pero no encuentran la forma, el lenguaje o la confianza. Se trabaja sobre la identidad artística propia, sin copiar modelos ni seguir recetas.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Qué se trabaja</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { title: 'Composición', desc: 'Escritura, estructura, ritmo, voz propia.' },
+                { title: 'Escritura', desc: 'Textos poéticos, narrativos, ensayísticos.' },
+                { title: 'Música', desc: 'Creación musical, letra, armonía.' },
+                { title: 'Dirección artística', desc: 'Colaboración externa para proyectos con visión.' },
+              ].map((item) => (
+                <div class="p-5 border border-gold/15 rounded-sm">
+                  <h4 class="font-heading font-light text-parchment mb-2">{item.title}</h4>
+                  <p class="font-body font-light text-parchment/60 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Colaboración externa</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              Florencia también ofrece dirección artística como colaboración externa. Si tenés un proyecto creativo y necesitás una mirada que ordene, potencie o dé coherencia, este es el espacio.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding bg-night">
+      <div class="container-padding">
+        <SectionTitle
+          title="Detalles de canciones"
+          subtitle="Proyectos musicales y composiciones."
+        />
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          {songProjects.map((song) => (
+            <article class="p-6 border border-gold/15 rounded-sm">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="font-display text-xl font-semibold text-parchment">{song.title}</h4>
+                <div class="text-right">
+                  {song.duration && <span class="font-body font-light text-gold/60 text-xs block">{song.duration}</span>}
+                  {song.year && <span class="font-body font-light text-gold/40 text-xs block">{song.year}</span>}
+                </div>
+              </div>
+              <p class="font-body font-light text-parchment/60 text-sm leading-relaxed">{song.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <p class="text-center font-body font-light text-parchment/40 text-xs mt-8">
+          Más proyectos musicales próximamente.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

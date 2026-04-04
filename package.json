@@ -1,0 +1,24 @@
+{
+  "name": "flor-villeneuve-web",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/netlify": "^5.5.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@fontsource/cormorant": "^5.1.1",
+    "@fontsource/cormorant-garamond": "^5.1.1",
+    "@fontsource/jost": "^5.1.1",
+    "astro": "^4.16.18",
+    "resend": "^4.0.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}

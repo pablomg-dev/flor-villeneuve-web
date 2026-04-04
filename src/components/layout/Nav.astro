@@ -1,0 +1,21 @@
+---
+import type { NavItem } from '../../types';
+
+export interface Props {
+  items: NavItem[];
+  mobileOpen: boolean;
+}
+
+const { items, mobileOpen } = Astro.props;
+---
+
+<nav class:list={['flex flex-col md:flex-row md:items-center md:gap-8', mobileOpen ? 'block' : 'hidden md:flex']}>
+  {items.map((item) => (
+    <a
+      href={item.href}
+      class="font-body font-light text-parchment/80 tracking-wide transition-colors duration-300 hover:text-gold py-3 md:py-0 block md:inline"
+    >
+      {item.label}
+    </a>
+  ))}
+</nav>

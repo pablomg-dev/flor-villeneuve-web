@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Button from '../../components/ui/Button.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+---
+
+<BaseLayout title="Astrología" description="Curso de Astrología simbólica y vivencial con Florencia Villeneuve. Carta natal, tránsitos, sinastrías, revoluciones solares. Clases online." canonical="/formacion/astrologia">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <SectionTitle
+          title="Astrología"
+          subtitle="Tu carta natal como mapa del alma. Los tránsitos como clima interior."
+        />
+
+        <div class="max-w-3xl mx-auto space-y-12">
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">El enfoque de Florencia</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              La astrología que enseña Florencia es simbólica y vivencial. No se trata de predicciones ni de horóscopos de revista. Se trata de leer el cielo como se lee un poema: con atención, con cuerpo, con honestidad. Tu carta natal es un mapa de posibilidades, los tránsitos son el clima por el que navegás.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-6">Contenidos</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { title: 'Carta natal', desc: 'Planetas, signos, casas y aspectos.' },
+                { title: 'Tránsitos planetarios', desc: 'Cómo el cielo actual activa tu carta.' },
+                { title: 'Sinastrías', desc: 'Vínculos y resonancias entre cartas.' },
+                { title: 'Revoluciones solares', desc: 'Tu año personal leído en el cielo.' },
+                { title: 'Planetas y casas', desc: 'El escenario y los actores de tu mapa.' },
+                { title: 'Aspectos', desc: 'Las conversaciones entre planetas.' },
+              ].map((item) => (
+                <div class="p-5 border border-gold/15 rounded-sm">
+                  <h4 class="font-heading font-light text-parchment mb-2">{item.title}</h4>
+                  <p class="font-body font-light text-parchment/60 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Niveles</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              Desde cero absoluto hasta interpretación avanzada. No se necesita ningún conocimiento previo. El recorrido se construye entre Florencia y cada estudiante, respetando el ritmo personal.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Modalidad</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              Clases online, individuales o de a 2 personas. Cada encuentro se adapta a lo que el estudiante necesita en ese momento.
+            </p>
+          </div>
+
+          <div class="text-center pt-4">
+            <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

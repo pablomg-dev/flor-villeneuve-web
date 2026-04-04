@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import Button from '../components/ui/Button.astro';
+
+const whatsappUrl = 'https://wa.me/59892497675';
+
+const modalidades = [
+  {
+    name: 'Sesión única',
+    description: 'Una lectura profunda y personalizada. Ideal para quienes quieren una primera aproximación al trabajo con Florencia.',
+    includes: ['Lectura de tarot akáshico o carta natal', 'Sesión individual online', 'Devuelta personalizada'],
+  },
+  {
+    name: 'Proceso de 4 sesiones',
+    description: 'Acompañamiento mensual con seguimiento continuo. Para quienes quieren profundizar en su proceso de autoconocimiento.',
+    includes: ['4 sesiones de acompañamiento', 'Seguimiento entre sesiones', 'Material escrito complementario', 'Carta-poema de regalo'],
+  },
+  {
+    name: 'Proceso extendido',
+    description: 'Seguimiento a largo plazo con revisiones por tránsitos y ciclos. Para integrar lo esotérico en la vida cotidiana.',
+    includes: ['Ciclo de sesiones a lo largo del año', 'Revisiones por tránsitos astrológicos', 'Acompañamiento en ciclos personales'],
+  },
+];
+---
+
+<BaseLayout title="Mentoría" description="Mentoría personalizada con Florencia Villeneuve. Sesiones individuales de acompañamiento integrando tarot, astrología y numerología." canonical="/mentoria">
+  <Header />
+  <main>
+    <section class="section-padding bg-deep pt-32">
+      <div class="container-padding">
+        <SectionTitle
+          title="Mentoría personalizada"
+          subtitle="Un espacio donde se integran todas las herramientas esotéricas según lo que cada persona necesita."
+        />
+        <div class="max-w-3xl mx-auto space-y-6 mb-16">
+          <p class="font-body font-light text-parchment/70 leading-relaxed text-center">
+            Florencia como mentora personal esotérica ofrece sesiones individuales de acompañamiento donde se integran tarot, astrología y numerología según lo que necesita cada persona.
+          </p>
+          <p class="font-body font-light text-parchment/70 leading-relaxed text-center">
+            Se trabaja desde una mirada integral y simbólica sobre autoconocimiento, proyectos, relaciones, finanzas y todo aquello que puede leerse con otros ojos.
+          </p>
+          <p class="font-body font-light text-parchment/60 leading-relaxed text-center text-sm">
+            Todas las sesiones son online o coordinadas por WhatsApp. No hay contacto presencial.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {modalidades.map((mod) => (
+            <article class="p-8 border border-gold/20 rounded-sm hover:border-gold/50 transition-all duration-500">
+              <h3 class="font-display text-xl font-semibold text-gold mb-3">{mod.name}</h3>
+              <p class="font-body font-light text-parchment/70 leading-relaxed text-sm mb-6">{mod.description}</p>
+              <ul class="space-y-2 mb-8">
+                {mod.includes.map((item) => (
+                  <li class="flex items-start gap-2 font-body font-light text-parchment/60 text-sm">
+                    <span class="text-gold mt-0.5">✦</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div class="text-center mt-16">
+          <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

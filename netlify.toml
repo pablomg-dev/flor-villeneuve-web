@@ -1,0 +1,24 @@
+[[redirects]]
+  from = "/formaciones"
+  to = "/formacion"
+  status = 301
+
+[[redirects]]
+  from = "/guias-y-acompanamientos"
+  to = "/mentoria"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/bio"
+  status = 301
+
+[[redirects]]
+  from = "/mi-libro"
+  to = "/libro"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/contacto"
+  status = 301
