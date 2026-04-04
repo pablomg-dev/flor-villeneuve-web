@@ -17,7 +17,6 @@
     "@fontsource/cormorant-garamond": "^5.1.1",
     "@fontsource/jost": "^5.1.1",
     "astro": "^4.16.18",
-    "resend": "^4.0.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
   }

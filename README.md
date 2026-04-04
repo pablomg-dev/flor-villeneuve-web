@@ -10,7 +10,7 @@ Migración de WordPress (`florhesiendo.com`) a un stack moderno con Astro.
 - **Estilos:** [Tailwind CSS v3](https://tailwindcss.com/)
 - **Lenguaje:** TypeScript (strict mode)
 - **Fuentes:** @fontsource (Cormorant Garamond, Cormorant, Jost)
-- **Email:** [Resend](https://resend.com/)
+- **Forms:** [Netlify Forms](https://docs.netlify.com/forms/setup/)
 - **Deploy:** [Netlify](https://www.netlify.com/)
 - **Package manager:** pnpm
 
@@ -35,9 +35,8 @@ src/
 │   ├── packs.astro          # Packs de consulta
 │   ├── creativos.astro      # Talleres artísticos y proyectos musicales
 │   ├── bio.astro            # Biografía
-│   ├── libro.astro          # "La visceversa de un escondite"
-│   ├── contacto.astro       # Formulario de contacto
-│   └── api/contact.ts       # API route con Resend
+│   ├── libro.astro          # "La visceversa de un escondite" + formulario (Netlify Forms)
+│   └── contacto.astro       # Formulario de contacto (Netlify Forms)
 ├── styles/
 │   └── global.css           # Fuentes, Tailwind, animaciones
 ├── types/
@@ -70,15 +69,6 @@ src/
 
 ```bash
 pnpm install
-```
-
-### Variables de entorno
-
-Copiá `.env.example` a `.env` y completá:
-
-```env
-RESEND_API_KEY=re_xxxxxxxx
-CONTACT_EMAIL=tu@email.com
 ```
 
 ### Comandos
@@ -141,12 +131,16 @@ Configurados en `netlify.toml` para preservar SEO de la web anterior:
 | `/mi-libro` | `/libro` |
 | `/contact` | `/contacto` |
 
-## Formulario de contacto
+## Formularios
 
-- API route en `/api/contact` usando [Resend](https://resend.com/)
-- Envía al email configurado en `CONTACT_EMAIL` (variable de entorno)
-- Sin emails hardcodeados en el código
-- Formulario del libro envía un fragmento con asunto diferenciado
+Ambos formularios usan **Netlify Forms** — sin API routes ni dependencias externas.
+
+| Formulario | `name` | Dónde |
+|-----------|--------|-------|
+| Contacto general | `contacto` | `/contacto` y home |
+| Fragmento del libro | `libro-preview` | `/libro` |
+
+Netlify detecta automáticamente los formularios con `data-netlify="true"` y envía las respuestas al dashboard.
 
 ## Notas
 

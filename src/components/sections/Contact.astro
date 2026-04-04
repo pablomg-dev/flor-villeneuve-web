@@ -11,7 +11,8 @@ const whatsappUrl = 'https://wa.me/59892497675';
       subtitle="Escribile a Florencia. Toda consulta se responde con calma y atención."
     />
     <div class="max-w-xl mx-auto">
-      <form id="contact-form" class="space-y-6">
+      <form name="contacto" method="POST" data-netlify="true" class="space-y-6">
+        <input type="hidden" name="form-name" value="contacto" />
         <div>
           <label for="name" class="block font-body font-light text-parchment/70 text-sm mb-2">Nombre</label>
           <input
@@ -80,8 +81,6 @@ const whatsappUrl = 'https://wa.me/59892497675';
           ></textarea>
         </div>
 
-        <div id="form-status" class="hidden"></div>
-
         <button
           type="submit"
           class="cta-button w-full"
@@ -104,39 +103,3 @@ const whatsappUrl = 'https://wa.me/59892497675';
     </div>
   </div>
 </section>
-
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const statusEl = document.getElementById('form-status');
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok && statusEl) {
-        statusEl.classList.remove('hidden');
-        statusEl.textContent = 'Mensaje enviado con éxito. Florencia te responderá pronto.';
-        statusEl.className = 'text-gold font-body font-light text-sm mt-4';
-        form.reset();
-      } else if (statusEl) {
-        statusEl.classList.remove('hidden');
-        statusEl.textContent = 'Hubo un error al enviar el mensaje. Intentá de nuevo o escribí por WhatsApp.';
-        statusEl.className = 'text-red-400 font-body font-light text-sm mt-4';
-      }
-    } catch {
-      if (statusEl) {
-        statusEl.classList.remove('hidden');
-        statusEl.textContent = 'Error de conexión. Intentá de nuevo o escribí por WhatsApp.';
-        statusEl.className = 'text-red-400 font-body font-light text-sm mt-4';
-      }
-    }
-  });
-</script>
