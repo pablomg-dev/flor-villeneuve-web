@@ -35,7 +35,6 @@ src/
 │   ├── packs.astro          # Packs de consulta
 │   ├── creativos.astro      # Talleres artísticos y proyectos musicales
 │   ├── bio.astro            # Biografía
-│   ├── libro.astro          # "La visceversa de un escondite" + formulario (Netlify Forms)
 │   └── contacto.astro       # Formulario de contacto (Netlify Forms)
 ├── styles/
 │   └── global.css           # Fuentes, Tailwind, animaciones
@@ -55,8 +54,7 @@ src/
 | 4 | Packs | `/packs` |
 | 5 | Creativos | `/creativos` |
 | 6 | Bio | `/bio` |
-| 7 | Libro | `/libro` |
-| 8 | Contacto | `/contacto` |
+| 7 | Contacto | `/contacto` |
 
 ## Desarrollo
 
@@ -128,17 +126,16 @@ Configurados en `netlify.toml` para preservar SEO de la web anterior:
 | `/formaciones` | `/formacion` |
 | `/guias-y-acompanamientos` | `/mentoria` |
 | `/about` | `/bio` |
-| `/mi-libro` | `/libro` |
+| `/mi-libro` | `/bio` |
 | `/contact` | `/contacto` |
 
 ## Formularios
 
-Ambos formularios usan **Netlify Forms** — sin API routes ni dependencias externas.
+El formulario de contacto usa **Netlify Forms** — sin API routes ni dependencias externas.
 
 | Formulario | `name` | Dónde |
 |-----------|--------|-------|
 | Contacto general | `contacto` | `/contacto` y home |
-| Fragmento del libro | `libro-preview` | `/libro` |
 
 Netlify detecta automáticamente los formularios con `data-netlify="true"` y envía las respuestas al dashboard.
 

@@ -21,8 +21,8 @@
   .section-padding { @apply py-24 md:py-32; }
   .container-padding { @apply px-6 md:px-12 lg:px-24 max-w-7xl mx-auto; }
   .gold-divider { @apply border-t border-gold/30; }
-  .cta-button { @apply inline-block px-8 py-3 font-heading font-light tracking-wide text-deep bg-gold rounded-sm transition-all duration-300 hover:bg-goldLight hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-deep; }
-  .cta-button-outline { @apply inline-block px-8 py-3 font-heading font-light tracking-wide text-gold border border-gold rounded-sm transition-all duration-300 hover:bg-gold hover:text-deep focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-deep; }
+  .cta-button { @apply inline-block px-8 py-3 font-body font-medium tracking-wide text-ink bg-gold rounded-sm transition-all duration-300 hover:bg-goldLight hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-deep; }
+  .cta-button-outline { @apply inline-block px-8 py-3 font-body font-medium tracking-wide text-parchment border border-gold/60 rounded-sm transition-all duration-300 hover:bg-gold hover:text-ink focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-deep; }
 }
 
 @layer utilities {
