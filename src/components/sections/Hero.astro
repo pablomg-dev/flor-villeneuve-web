@@ -1,5 +1,4 @@
 ﻿---
-import Button from '../ui/Button.astro';
 ---
 
 <section class="relative min-h-screen flex items-center justify-center bg-deep overflow-hidden">
@@ -14,10 +13,8 @@ import Button from '../ui/Button.astro';
     <p class="font-heading font-light text-gold text-lg md:text-xl mt-6 tracking-widest fade-in-delay-1">
       Mentora Esotérica · Formación · Creación
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12 fade-in-delay-2">
-      <Button href="/mentoria" variant="primary">Quiero mentoría</Button>
-      <Button href="/formacion" variant="outline">Quiero aprender</Button>
-      <Button href="/packs" variant="outline">Packs de consulta</Button>
-    </div>
+    <a href="/formacion" class="inline-block mt-12 text-xl font-display italic text-gold transition-colors duration-200 hover:text-goldLight fade-in-delay-2">
+      Explorar &rarr;
+    </a>
   </div>
 </section>

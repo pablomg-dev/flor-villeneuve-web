@@ -1,5 +1,4 @@
 ﻿---
-import Button from '../ui/Button.astro';
 import SectionTitle from '../ui/SectionTitle.astro';
 ---
 
@@ -8,7 +7,7 @@ import SectionTitle from '../ui/SectionTitle.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       <div>
         <img
-          src="/img/01.png"
+          src="/img/01.jpg"
           alt="Florencia Villeneuve"
           class="aspect-[3/4] object-cover rounded-sm border border-earth/10"
         />
@@ -31,7 +30,7 @@ import SectionTitle from '../ui/SectionTitle.astro';
           </p>
         </div>
         <div class="mt-8">
-          <Button href="/bio" variant="outline">Leer bio completa</Button>
+          <a href="/bio" class="inline-block font-body font-medium text-gold text-sm tracking-wide border-b border-gold/30 pb-0.5 hover:border-gold transition-colors duration-300">Saber más</a>
         </div>
       </div>
     </div>
