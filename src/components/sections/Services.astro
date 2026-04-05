@@ -31,8 +31,8 @@ const services = [
       subtitle="Tarot, astrología y numerología: tres formas de leer lo simbólico y acompañar procesos de transformación."
     />
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map((service) => (
-        <ServiceCard {...service} />
+      {services.map((service, i) => (
+        <ServiceCard {...service} delay={`reveal-delay-${i}`} />
       ))}
     </div>
   </div>

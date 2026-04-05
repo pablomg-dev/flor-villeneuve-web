@@ -5,12 +5,13 @@ interface Props {
   description: string;
   includes: string[];
   cta: string;
+  delay?: string;
 }
 
-const { name, tagline, description, includes, cta } = Astro.props;
+const { name, tagline, description, includes, cta, delay = '' } = Astro.props;
 ---
 
-<article class="group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 flex flex-col">
+<article class:list={['group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 flex flex-col reveal', delay]}>
   <h3 class="font-display text-2xl font-semibold text-gold mb-1">{name}</h3>
   <p class="font-heading font-light text-parchment/60 text-sm mb-3">{tagline}</p>
   <p class="font-body font-light text-parchment/70 leading-relaxed text-sm mb-6">{description}</p>

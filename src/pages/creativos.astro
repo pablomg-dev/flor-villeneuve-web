@@ -35,14 +35,14 @@ const songProjects: SongProject[] = [
         />
 
         <div class="max-w-3xl mx-auto space-y-12">
-          <div>
+          <div class="reveal">
             <h3 class="font-display text-2xl font-semibold text-gold mb-4">Encontrar tu identidad artística</h3>
             <p class="font-body font-light text-parchment/70 leading-relaxed">
               Los talleres creativos de Florencia están pensados para quienes sienten el impulso de crear pero no encuentran la forma, el lenguaje o la confianza. Se trabaja sobre la identidad artística propia, sin copiar modelos ni seguir recetas.
             </p>
           </div>
 
-          <div>
+          <div class="reveal reveal-delay-1">
             <h3 class="font-display text-2xl font-semibold text-gold mb-4">Qué se trabaja</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
@@ -50,8 +50,8 @@ const songProjects: SongProject[] = [
                 { title: 'Escritura', desc: 'Textos poéticos, narrativos, ensayísticos.' },
                 { title: 'Música', desc: 'Creación musical, letra, armonía.' },
                 { title: 'Dirección artística', desc: 'Colaboración externa para proyectos con visión.' },
-              ].map((item) => (
-                <div class="p-5 border border-gold/15 rounded-sm">
+              ].map((item, i) => (
+                <div class={`p-5 border border-gold/15 rounded-sm reveal reveal-delay-${i}`}>
                   <h4 class="font-heading font-light text-parchment mb-2">{item.title}</h4>
                   <p class="font-body font-light text-parchment/60 text-sm">{item.desc}</p>
                 </div>
@@ -59,14 +59,14 @@ const songProjects: SongProject[] = [
             </div>
           </div>
 
-          <div>
+          <div class="reveal reveal-delay-2">
             <h3 class="font-display text-2xl font-semibold text-gold mb-4">Colaboración externa</h3>
             <p class="font-body font-light text-parchment/70 leading-relaxed">
               Florencia también ofrece dirección artística como colaboración externa. Si tenés un proyecto creativo y necesitás una mirada que ordene, potencie o dé coherencia, este es el espacio.
             </p>
           </div>
 
-          <div class="text-center">
+          <div class="text-center reveal">
             <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
           </div>
         </div>
@@ -81,8 +81,8 @@ const songProjects: SongProject[] = [
         />
 
         <div class="max-w-3xl mx-auto space-y-6">
-          {songProjects.map((song) => (
-            <article class="p-6 border border-gold/15 rounded-sm">
+          {songProjects.map((song, i) => (
+            <article class={`p-6 border border-gold/15 rounded-sm reveal reveal-delay-${i}`}>
               <div class="flex justify-between items-start mb-3">
                 <h4 class="font-display text-xl font-semibold text-parchment">{song.title}</h4>
                 <div class="text-right">
@@ -95,7 +95,7 @@ const songProjects: SongProject[] = [
           ))}
         </div>
 
-        <p class="text-center font-body font-light text-parchment/40 text-xs mt-8">
+        <p class="text-center font-body font-light text-parchment/40 text-xs mt-8 reveal">
           Más proyectos musicales próximamente.
         </p>
       </div>

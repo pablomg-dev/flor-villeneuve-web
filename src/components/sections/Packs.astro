@@ -51,8 +51,8 @@ const packs = [
       subtitle="Propuestas claras con nombre, propósito y camino. Sin precios en la web — la coordinación es directa."
     />
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {packs.map((pack) => (
-        <PackCard {...pack} />
+      {packs.map((pack, i) => (
+        <PackCard {...pack} delay={`reveal-delay-${i}`} />
       ))}
     </div>
   </div>

@@ -19,70 +19,54 @@ const whatsappUrl = 'https://wa.me/59892497675';
         />
 
         <div class="max-w-3xl mx-auto space-y-12">
-          <div>
+          <div class="reveal">
             <h3 class="font-display text-2xl font-semibold text-gold mb-4">¿Qué es el tarot akáshico?</h3>
             <p class="font-body font-light text-parchment/70 leading-relaxed">
               Para Florencia, el tarot no es adivinación ni entretenimiento. Es un lenguaje simbólico que permite acceder a capas profundas de autoconocimiento. El tarot akáshico trabaja con los registros del alma — esa memoria sutil que cada ser trae consigo. Cada carta es un espejo, cada tirada una conversación con lo invisible.
             </p>
           </div>
 
-          <div>
+          <div class="reveal reveal-delay-1">
             <h3 class="font-display text-2xl font-semibold text-gold mb-6">Niveles</h3>
 
             <div class="space-y-8">
-              <div class="p-6 border border-gold/15 rounded-sm">
-                <h4 class="font-heading font-light text-parchment text-lg mb-3">Nivel 1 — Iniciación</h4>
-                <ul class="space-y-2">
-                  {['Historia y estructura del tarot', 'Arcanos mayores: simbolismo y arquetipos', 'Primeras tiradas y lectura intuitiva', 'Conexión personal con el mazo', 'Ética y cuidado en la lectura'].map((item) => (
-                    <li class="flex items-start gap-2 font-body font-light text-parchment/70 text-sm">
-                      <span class="text-gold mt-0.5">✦</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div class="p-6 border border-gold/15 rounded-sm">
-                <h4 class="font-heading font-light text-parchment text-lg mb-3">Nivel 2 — Intermedio</h4>
-                <ul class="space-y-2">
-                  {['Arcanos menores: palos y numerología', 'Tiradas complejas y combinaciones', 'Simbolismo e interpretación profunda', 'Lectura para uno mismo con profundidad', 'Integración con astrología y numerología'].map((item) => (
-                    <li class="flex items-start gap-2 font-body font-light text-parchment/70 text-sm">
-                      <span class="text-gold mt-0.5">✦</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div class="p-6 border border-gold/15 rounded-sm">
-                <h4 class="font-heading font-light text-parchment text-lg mb-3">Nivel 3 — Lectura para otros</h4>
-                <ul class="space-y-2">
-                  {['Técnicas de lectura para terceros', 'Manejo de la sesión y el espacio', 'Ética profesional y límites', 'Práctica supervisada', 'Desarrollo del propio estilo de lectura'].map((item) => (
-                    <li class="flex items-start gap-2 font-body font-light text-parchment/70 text-sm">
-                      <span class="text-gold mt-0.5">✦</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {['Iniciación', 'Intermedio', 'Lectura para otros'].map((level, i) => (
+                <div class={`p-6 border border-gold/15 rounded-sm reveal reveal-delay-${i}`}>
+                  <h4 class="font-heading font-light text-parchment text-lg mb-3">Nivel {i + 1} — {level}</h4>
+                  <ul class="space-y-2">
+                    {[
+                      i === 0
+                        ? ['Historia y estructura del tarot', 'Arcanos mayores: simbolismo y arquetipos', 'Primeras tiradas y lectura intuitiva', 'Conexión personal con el mazo', 'Ética y cuidado en la lectura']
+                        : i === 1
+                          ? ['Arcanos menores: palos y numerología', 'Tiradas complejas y combinaciones', 'Simbolismo e interpretación profunda', 'Lectura para uno mismo con profundidad', 'Integración con astrología y numerología']
+                          : ['Técnicas de lectura para terceros', 'Manejo de la sesión y el espacio', 'Ética profesional y límites', 'Práctica supervisada', 'Desarrollo del propio estilo de lectura']
+                    ].map((item) => (
+                      <li class="flex items-start gap-2 font-body font-light text-parchment/70 text-sm">
+                        <span class="text-gold mt-0.5">✦</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div>
+          <div class="reveal reveal-delay-2">
             <h3 class="font-display text-2xl font-semibold text-gold mb-4">Modalidad</h3>
             <p class="font-body font-light text-parchment/70 leading-relaxed">
               Clases individuales o de a 2 personas, 100% online. Cada clase se adapta al ritmo del estudiante. La duración estimada depende del nivel y la frecuencia acordada.
             </p>
           </div>
 
-          <div>
+          <div class="reveal reveal-delay-3">
             <h3 class="font-display text-2xl font-semibold text-gold mb-4">¿A quién está dirigido?</h3>
             <p class="font-body font-light text-parchment/70 leading-relaxed">
               A cualquier persona desde los 9 años que sienta curiosidad genuina por el tarot como herramienta de autoconocimiento. No se necesita experiencia previa. Solo ganas de mirar para adentro.
             </p>
           </div>
 
-          <div class="text-center pt-4">
+          <div class="text-center pt-4 reveal">
             <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>
           </div>
         </div>

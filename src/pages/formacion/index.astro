@@ -40,8 +40,8 @@ const disciplines = [
         />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-          {disciplines.map((disc) => (
-            <a href={disc.href} class="group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 block">
+          {disciplines.map((disc, i) => (
+            <a href={disc.href} class={`group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 block reveal reveal-delay-${i}`}>
               <div class="text-gold text-4xl mb-4">{disc.icon}</div>
               <h3 class="font-display text-2xl font-semibold text-parchment mb-3 group-hover:text-gold transition-colors duration-300">{disc.title}</h3>
               <p class="font-body font-light text-parchment/70 leading-relaxed text-sm">{disc.description}</p>
@@ -53,7 +53,7 @@ const disciplines = [
         </div>
 
         <div class="max-w-2xl mx-auto text-center">
-          <p class="font-body font-light text-parchment/60 leading-relaxed mb-8">
+          <p class="font-body font-light text-parchment/60 leading-relaxed mb-8 reveal">
             Todas las clases son online, individuales o de a 2 personas. Se adaptan al ritmo y la necesidad de cada estudiante. No hay edad mínima para empezar — hay ganas de aprender.
           </p>
           <Button href={whatsappUrl} variant="primary" external>Consultar por WhatsApp</Button>

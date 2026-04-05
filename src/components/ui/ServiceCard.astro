@@ -4,12 +4,13 @@ interface Props {
   description: string;
   icon: string;
   href?: string;
+  delay?: string;
 }
 
-const { title, description, icon, href } = Astro.props;
+const { title, description, icon, href, delay = '' } = Astro.props;
 ---
 
-<article class="group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50">
+<article class:list={['group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 reveal', delay]}>
   <div class="text-gold text-4xl mb-4">{icon}</div>
   <h3 class="font-display text-2xl font-semibold text-parchment mb-3">{title}</h3>
   <p class="font-body font-light text-parchment/70 leading-relaxed text-sm">{description}</p>
