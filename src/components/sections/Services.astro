@@ -1,27 +1,5 @@
-﻿---
-import ServiceCard from '../ui/ServiceCard.astro';
+---
 import SectionTitle from '../ui/SectionTitle.astro';
-
-const services = [
-  {
-    title: 'Simbología',
-    description: 'Lectura del tarot akáshico como herramienta de autoconocimiento profundo. Cada carta es un símbolo vivo que habla de tu historia, tus sombras y su luz.',
-    icon: '/img/tarot.svg',
-    href: '/formacion/tarot',
-  },
-  {
-    title: 'Arte',
-    description: 'Astrología simbólica y vivencial. Tu carta natal como mapa del alma, los tránsitos como clima interior. Un lenguaje ancestral para leer tu presente.',
-    icon: '/img/astrologia.svg',
-    href: '/formacion/astrologia',
-  },
-  {
-    title: 'Psicología',
-    description: 'Los números como lenguaje simbólico. Camino de vida, expresión, alma y ciclos. Una herramienta más para comprender tu diseño único.',
-    icon: '/img/numerologia.svg',
-    href: '/formacion/numerologia',
-  },
-];
 ---
 
 <section class="section-padding bg-deep">
@@ -30,10 +8,21 @@ const services = [
       title="Tres lenguajes, un camino"
       subtitle="Simbología, arte y psicología: tres formas de leer lo simbólico y acompañar procesos de transformación."
     />
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map((service, i) => (
-        <ServiceCard {...service} delay={`reveal-delay-${i}`} />
-      ))}
+    <div class="space-y-6 reveal">
+      <p class="font-body font-light text-parchment/80 leading-relaxed">
+        Florencia trabaja con tres lenguajes simbólicos profundos que nos permiten acceder a capas de comprensión más allá de lo racional: la simbología del tarot akáshico como mapa del alma, el arte como expresión y transformación de la experiencia interior, y la psicología como integración consciente de patrones y comportamientos.
+      </p>
+      <p class="font-body font-light text-parchment/80 leading-relaxed">
+        A través de estos lenguajes, se puede explorar la historia personal, identificar bloques y potenciales, y encontrar nuevas formas de relacionarse consigo mismo y con el mundo. Cada enfoque ofrece una perspectiva única que, cuando se integran, brinda una visión más completa del ser.
+      </p>
+      <p class="font-body font-light text-parchment/80 leading-relaxed">
+        Ya sea que sientas curiosidad por entender tus patrones repetitivos, explorar tu creatividad o profundizar en tu autoconocimiento, estos tres caminos se complementan para ofrecer un acompañamiento integral y personalizado.
+      </p>
+    </div>
+    <div class="text-center reveal reveal-delay-1">
+      <a href="/mentoria" class="inline-block font-body font-medium text-gold text-sm tracking-wide border-b border-gold/30 pb-0.5 hover:border-gold transition-colors duration-300">
+        Saber más sobre la mentoría personalizada
+      </a>
     </div>
   </div>
 </section>
