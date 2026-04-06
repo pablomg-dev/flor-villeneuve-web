@@ -8,10 +8,15 @@ interface Props {
 }
 
 const { title, description, icon, href, delay = '' } = Astro.props;
+const isSvg = icon?.endsWith('.svg');
 ---
 
 <article class:list={['group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 reveal', delay]}>
-  <div class="text-gold text-4xl mb-4">{icon}</div>
+  {isSvg ? (
+    <img src={icon} alt={title} class="w-16 h-16 mx-auto mb-4" />
+  ) : (
+    <div class="text-gold text-4xl mb-4">{icon}</div>
+  )}
   <h3 class="font-display text-2xl font-semibold text-parchment mb-3">{title}</h3>
   <p class="font-body font-light text-parchment/70 leading-relaxed text-sm">{description}</p>
   {href && (
