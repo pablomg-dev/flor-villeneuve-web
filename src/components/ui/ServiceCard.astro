@@ -13,7 +13,7 @@ const isSvg = icon?.endsWith('.svg');
 
 <article class:list={['group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 reveal', delay]}>
   {isSvg ? (
-    <img src={icon} alt={title} class="w-16 h-16 mx-auto mb-4" />
+    <img src={icon} alt={title} class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4" />
   ) : (
     <div class="text-gold text-4xl mb-4">{icon}</div>
   )}
