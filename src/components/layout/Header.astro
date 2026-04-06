@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
 
     <button
       id="menu-toggle"
-      class="md:hidden text-gold p-2 focus:outline-none"
+      class="md:hidden text-gold p-2 focus:outline-none flex-shrink-0"
       aria-label="Abrir menú"
       aria-expanded="false"
     >
@@ -32,30 +32,41 @@ const navItems: NavItem[] = [
 
     <Nav items={navItems} mobileOpen={false} />
   </div>
+
+  <nav id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-night px-6 py-6 border-b border-gold/10 transition-all duration-300 ease-in-out opacity-0 -translate-y-2 invisible">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class="font-body font-light text-parchment/80 tracking-wide transition-colors duration-300 hover:text-gold py-3 block"
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
 </header>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
-  const nav = document.querySelector('nav');
+  const menu = document.getElementById('mobile-menu');
 
   toggle?.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isOpen));
 
-    if (nav) {
-      nav.classList.toggle('max-h-96');
-      nav.classList.toggle('opacity-100');
-      nav.classList.toggle('max-h-0');
-      nav.classList.toggle('opacity-0');
-      nav.classList.toggle('absolute');
-      nav.classList.toggle('top-full');
-      nav.classList.toggle('left-0');
-      nav.classList.toggle('right-0');
-      nav.classList.toggle('bg-night');
-      nav.classList.toggle('px-6');
-      nav.classList.toggle('py-6');
-      nav.classList.toggle('border-b');
-      nav.classList.toggle('border-gold/10');
+    if (menu) {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          menu.classList.add('opacity-100', 'translate-y-0', 'visible');
+          menu.classList.remove('opacity-0', '-translate-y-2', 'invisible');
+        });
+      } else {
+        menu.classList.add('opacity-0', '-translate-y-2', 'invisible');
+        menu.classList.remove('opacity-100', 'translate-y-0', 'visible');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300);
+      }
     }
   });
 </script>
