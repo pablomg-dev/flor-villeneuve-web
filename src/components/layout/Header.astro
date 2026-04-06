@@ -43,9 +43,10 @@ const navItems: NavItem[] = [
     toggle.setAttribute('aria-expanded', String(!isOpen));
 
     if (nav) {
-      nav.classList.toggle('hidden');
-      nav.classList.toggle('flex');
-      nav.classList.toggle('flex-col');
+      nav.classList.toggle('max-h-96');
+      nav.classList.toggle('opacity-100');
+      nav.classList.toggle('max-h-0');
+      nav.classList.toggle('opacity-0');
       nav.classList.toggle('absolute');
       nav.classList.toggle('top-full');
       nav.classList.toggle('left-0');
