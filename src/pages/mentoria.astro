@@ -1,71 +1,250 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import SectionTitle from '../components/ui/SectionTitle.astro';
 
 const whatsappUrl = 'https://wa.me/59892497675';
-
-const modalidades = [
-  {
-    name: 'Sesión única',
-    description: 'Una lectura profunda y personalizada. Ideal para quienes quieren una primera aproximación al trabajo con Florencia.',
-    includes: ['Lectura de tarot akáshico o carta natal', 'Sesión online', 'Devuelta personalizada'],
-  },
-  {
-    name: 'Proceso de 4 sesiones',
-    description: 'Acompañamiento mensual con seguimiento continuo. Para quienes quieren profundizar en su proceso de autoconocimiento.',
-    includes: ['4 sesiones de acompañamiento', 'Seguimiento entre sesiones', 'Material escrito complementario', 'Carta-poema de regalo'],
-  },
-  {
-    name: 'Mentorías',
-    description: 'Ofrece sesiones y vincular. Un camino profundo de transformación personal a lo largo del año.',
-    includes: ['Ciclo de sesiones a lo largo del año', 'Revisiones por tránsitos astrológicos', 'Acompañamiento en ciclos personales'],
-  },
-];
 ---
 
-<BaseLayout title="Mentoría" description="Mentoría personalizada con Florencia Villeneuve. Sesiones individuales de acompañamiento integrando tarot, astrología y numerología." canonical="/mentoria">
+<BaseLayout title="Mentorías" description="Mentorías personalizadas con Florencia Villeneuve. Sesiones individuales de acompañamiento integrando tarot, astrología y numerología." canonical="/mentoria">
   <Header />
   <main>
     <section class="section-padding bg-deep pt-32">
       <div class="container-padding">
         <SectionTitle
-          title="Mentoría personalizada"
+          title="Mentorías personalizadas"
           subtitle="Un espacio donde se integran todas las herramientas según lo que cada persona necesita."
         />
         <div class="max-w-3xl mx-auto space-y-6 mb-16">
           <p class="font-body font-light text-parchment/70 leading-relaxed text-center reveal">
-            Florencia ofrece sesiones de acompañamiento donde se integran tarot, astrología y numerología según lo que necesita cada persona.
+            Florencia ofrece sesiones de acompañamiento y mentorías donde se integran símbolos, arte terapia, coaching ontológico y psicología jungiana.
           </p>
           <p class="font-body font-light text-parchment/70 leading-relaxed text-center reveal reveal-delay-1">
-            Se trabaja desde una mirada integral y simbólica sobre autoconocimiento, proyectos, relaciones, finanzas y todo aquello que puede leerse con otros ojos.
+            Se planifican las mentorías desde una mirada integral y alquímica contemplando todas las dimensiones superpuestas: autoconocimiento, proyectos, relaciones, finanzas, vida cotidiana y todo aquello que nos sirve de catalizador. Siempre tu vida tal cual es, es el punto de partida.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {modalidades.map((mod, i) => (
-            <article class={`p-8 border border-gold/20 rounded-sm hover:border-gold/50 transition-all duration-500 flex flex-col reveal reveal-delay-${i}`}>
-              <h3 class="font-display text-xl font-semibold text-gold mb-3">{mod.name}</h3>
-              <p class="font-body font-light text-parchment/70 leading-relaxed text-sm mb-6">{mod.description}</p>
-              <ul class="space-y-2 mb-8 flex-grow">
-                {mod.includes.map((item) => (
-                  <li class="flex items-start gap-2 font-body font-light text-parchment/60 text-sm">
-                    <span class="text-gold mt-0.5">✦</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+        <!-- Sesión única -->
+        <div class="max-w-4xl mx-auto mb-16">
+          <article class="p-8 md:p-12 border border-gold/30 rounded-sm bg-gold/5 reveal">
+            <h3 class="font-display text-2xl font-semibold text-gold mb-2">✨ Sesión única</h3>
+            <h4 class="font-heading font-light text-parchment/80 text-lg mb-6">Una puerta de entrada a tu proceso</h4>
+            
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-6">
+              Una lectura profunda y personalizada para quienes sienten el llamado a comprender lo que están atravesando, pero no saben por dónde empezar.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-6">
+              Este espacio es ideal como primer acercamiento a mi forma de trabajo: una mirada simbólica, integradora y consciente que va más allá de lo evidente.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-8">
+              No se trata solo de responder una pregunta, sino de abrir una comprensión más amplia sobre tu momento actual.
+            </p>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">🌿 ¿Qué incluye?</h5>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">🔮</span>
+                  <span><strong>Sesión de aproximadamente 1 hora y 15 minutos</strong> — Un espacio donde realizo un mapeo general de tu energía actual, como una radiografía de tu momento vital.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">🧭</span>
+                  <span><strong>Diagnóstico situacional de tu presente</strong> — A partir de ese recorrido, identifico los ejes principales que están activos hoy en tu vida: bloqueos, aprendizajes y potenciales.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">🪐</span>
+                  <span><strong>Lectura basada en tus datos de nacimiento</strong> — Trabajo con tu fecha, hora y lugar exacto de nacimiento como base para acceder a tu mapa simbólico.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">📝</span>
+                  <span><strong>Resumen + sugerencias prácticas personalizadas</strong> — Luego del encuentro, recibís una devolución con claves concretas y específicas para que puedas integrar y trabajar lo que surgió en la sesión.</span>
+                </li>
               </ul>
+            </div>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">🌀 ¿Para quién es esta sesión?</h5>
+              <p class="font-body font-light text-parchment/70 mb-3">Para quienes:</p>
+              <ul class="space-y-2 font-body font-light text-parchment/70">
+                <li>✦ Sienten que están en un momento de cambio o confusión</li>
+                <li>✦ Quieren entender patrones que se repiten</li>
+                <li>✦ Buscan claridad en decisiones importantes</li>
+                <li>✦ Desean una primera experiencia profunda de autoconocimiento.</li>
+              </ul>
+            </div>
+
+            <div class="mt-8 text-center">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="cta-button-outline text-center"
+                class="cta-button-outline"
               >
                 Consultar por WhatsApp
               </a>
-            </article>
-          ))}
+            </div>
+          </article>
+        </div>
+
+        <!-- Proceso Mensual -->
+        <div class="max-w-4xl mx-auto mb-16">
+          <article class="p-8 md:p-12 border border-gold/30 rounded-sm bg-gold/5 reveal">
+            <h3 class="font-display text-2xl font-semibold text-gold mb-2">🌿 Proceso mensual</h3>
+            <h4 class="font-heading font-light text-parchment/80 text-lg mb-6">Acompañamiento en profundidad</h4>
+            
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-6">
+              Un espacio de seguimiento para quienes sienten que una sola sesión no es suficiente y desean sostener un poco más y ver qué pasa en un espacio tiempo de un mes.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-6">
+              A diferencia de la sesión única, acá no solo comprendemos lo que te está pasando, <strong>lo trabajamos, lo atravesamos y lo integramos</strong> juntas/os.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-8">
+              Este formato permite ir más allá del "insight" inicial y acompañar los movimientos reales que van ocurriendo en tu vida.
+            </p>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">🌊 ¿Qué incluye?</h5>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">🕰</span>
+                  <span><strong>Sesiones de 45 minutos a 1 hora</strong> — Encuentros más frecuentes y enfocados, donde vamos acompañando el proceso paso a paso.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">🧭</span>
+                  <span><strong>Seguimiento entre sesiones</strong> — Incluye propuesta breve para trabajar durante el mes, integrando herramientas como arteterapia, tarot o ambas, según lo que necesites.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">🪐</span>
+                  <span><strong>Lectura y acompañamiento continuo</strong> — Trabajamos con tu mapa simbólico en tiempo real, acompañando los procesos que se van activando.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">📝</span>
+                  <span><strong>Devolución final del proceso</strong> — Al cierre del mes, recibís un resumen con el mismo formato que la sesión única, con sugerencias prácticas y específicas para integrar lo trabajado.</span>
+                </li>
+                <li class="flex items-start gap-3 font-body font-light text-parchment/70">
+                  <span class="text-gold mt-0.5">💌</span>
+                  <span><strong>Carta-poema personalizada</strong> — Una pieza escrita especialmente para vos, creada a partir de tu carta natal. Se entrega en formato digital como síntesis simbólica y emocional de tu proceso.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">🌀 ¿Para quién es este proceso?</h5>
+              <p class="font-body font-light text-parchment/70 mb-3">Para quienes:</p>
+              <ul class="space-y-2 font-body font-light text-parchment/70">
+                <li>✦ Sienten que necesitan sostén en el tiempo</li>
+                <li>✦ Están atravesando cambios profundos</li>
+                <li>✦ Quieren trabajar activamente sobre sí mismos</li>
+                <li>✦ Buscan integrar, no solo entender.</li>
+              </ul>
+            </div>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">🔥 La diferencia</h5>
+              <p class="font-body font-light text-parchment/70">
+                Si la sesión única es una radiografía del momento, <strong>el proceso mensual es el acompañamiento para habitar lo que aparece</strong>.
+              </p>
+              <p class="font-body font-light text-parchment/70 mt-3">
+                No se trata solo de ver, sino de transformar.
+              </p>
+            </div>
+
+            <div class="mt-8 text-center">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-button-outline"
+              >
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mentorías -->
+        <div class="max-w-4xl mx-auto">
+          <article class="p-8 md:p-12 border border-gold/30 rounded-sm bg-gold/5 reveal">
+            <h3 class="font-display text-2xl font-semibold text-gold mb-2">✧ Mentoría Integral Anual ✧</h3>
+            <h4 class="font-heading font-light text-parchment/80 text-lg mb-6">Un proceso profundo, sostenido y transformador en el tiempo.</h4>
+            
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-6">
+              Este espacio está diseñado para quienes sienten que su camino requiere algo más que sesiones aisladas: una mirada continua, una integración real y una construcción consciente de su proceso.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-8">
+              Puede realizarse de forma individual o en pareja, adaptándose a la dinámica y necesidad de cada vínculo.
+            </p>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">¿En qué se diferencia de las otras modalidades?</h5>
+              <p class="font-body font-light text-parchment/70 leading-relaxed mb-4">
+                A diferencia de la sesión única, que funciona como una radiografía del momento presente, y del proceso mensual, que acompaña por tramos más acotados, la mentoría anual propone un recorrido más amplio, donde se puede:
+              </p>
+              <ul class="space-y-2 font-body font-light text-parchment/70 mb-6">
+                <li>✦ Observar procesos en el tiempo real</li>
+                <li>✦ Integrar lo trabajado de forma progresiva</li>
+                <li>✦ Acompañar cambios profundos con mayor sostén</li>
+              </ul>
+              <p class="font-body font-light text-parchment/70">
+                Aquí no solo se interpreta: se trabaja, se integra y se encarna el proceso.
+              </p>
+            </div>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">¿Qué incluye?</h5>
+              <ul class="space-y-2 font-body font-light text-parchment/70">
+                <li>✧ Ciclo de sesiones a lo largo del año</li>
+                <li>✧ Acompañamiento cercano, continuo y singularizado</li>
+                <li>✧ Revisión de tránsitos astrológicos en momentos clave</li>
+                <li>✧ Trabajo profundo sobre ciclos personales y vinculares</li>
+                <li>✧ Integración activa de herramientas como:</li>
+              </ul>
+              <ul class="space-y-1 font-body font-light text-parchment/60 ml-6 mt-2">
+                <li>— Astrología</li>
+                <li>— Tarot</li>
+                <li>— Arte terapia</li>
+                <li>— Juego simbólico</li>
+              </ul>
+              <ul class="space-y-2 font-body font-light text-parchment/70 mt-4">
+                <li>✧ Ejercicios prácticos y material complementario de distintos referentes</li>
+                <li>✧ Desarrollo del plano práctico y ejecutivo del proceso personal</li>
+              </ul>
+            </div>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">Una experiencia más profunda</h5>
+              <p class="font-body font-light text-parchment/70 leading-relaxed mb-4">
+                En esta modalidad se fortalece especialmente la dimensión creativa, expresiva y vivencial del trabajo.
+              </p>
+              <p class="font-body font-light text-parchment/70 leading-relaxed mb-4">
+                No solo se comprende lo que te sucede: se habilitan nuevas formas de habitarlo.
+              </p>
+              <p class="font-body font-light text-parchment/70">
+                Las devoluciones no son solo puntuales, sino cíclicas, acompañando los momentos clave de tu proceso a lo largo del año.
+              </p>
+            </div>
+
+            <div class="border-t border-gold/20 pt-6 mt-6">
+              <h5 class="font-heading font-light text-gold mb-4">¿Para quién es este espacio?</h5>
+              <ul class="space-y-2 font-body font-light text-parchment/70">
+                <li>✦ Para quienes sienten que están en un momento de transformación real</li>
+                <li>✦ Para quienes quieren comprometerse con su proceso</li>
+                <li>✦ Para quienes buscan un acompañamiento profundo, sostenido y personalizado</li>
+              </ul>
+            </div>
+
+            <div class="mt-8 text-center">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-button-outline"
+              >
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
         </div>
 
       </div>

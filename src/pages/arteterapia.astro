@@ -1,110 +1,180 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import SectionTitle from '../components/ui/SectionTitle.astro';
-import type { SongProject } from '../types';
 
-const songProjects: SongProject[] = [
-  {
-    title: 'Título de la canción o proyecto',
-    description: 'Descripción del proyecto musical o composición. Este es un placeholder que se puede completar fácilmente con el contenido real.',
-    duration: '3:45',
-    year: '2024',
-  },
-  {
-    title: 'Otro proyecto musical',
-    description: 'Segunda entrada de ejemplo. Reemplazar con el contenido real de Florencia cuando esté disponible.',
-    duration: '4:12',
-    year: '2024',
-  },
-];
+const whatsappUrl = 'https://wa.me/59892497675';
+const youtubeUrl = 'https://www.youtube.com/@florencia.villeneuve';
 ---
 
-<BaseLayout title="Arteterapia" description="Talleres de composición y creación artística con Florencia Villeneuve. Identidad artística, dirección artística, composición, escritura y música." canonical="/arteterapia">
+<BaseLayout title="Arteterapia" description="Arte terapia con Florencia Villeneuve. Un espacio para explorar, expresar y transformar tu mundo interno a través del arte." canonical="/arteterapia">
   <Header />
   <main>
     <section class="section-padding bg-deep pt-32">
       <div class="container-padding">
         <SectionTitle
-          title="Arteterapia"
-          subtitle="Talleres de composición y creación artística. Técnica al servicio del deseo creativo."
+          title="✧ Arte Terapia ✧"
+          subtitle="Un espacio para explorar, expresar y transformar tu mundo interno a través del arte."
         />
 
-        <div class="max-w-3xl mx-auto space-y-12">
+        <div class="max-w-4xl mx-auto space-y-10">
           <div class="reveal">
-            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Encontrar tu identidad artística</h3>
-            <p class="font-body font-light text-parchment/70 leading-relaxed">
-              Los talleres de arteterapia de Florencia están pensados para quienes sienten el impulso de crear pero no encuentran la forma, el lenguaje o la confianza. Se trabaja sobre la identidad artística propia, sin copiar modelos ni seguir recetas.
+            <p class="font-body font-light text-parchment/70 leading-relaxed text-center mb-6">
+              No necesitás experiencia. No necesitás "saber hacer". Solo necesitás estar dispuesta/o a escucharte de otra manera.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed text-center">
+              El arte acá no es un fin. Es un canal para destrabar, comprender e integrar lo que te está pasando.
             </p>
           </div>
 
-          <div class="reveal reveal-delay-1">
-            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Qué se trabaja</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { title: 'Composición', desc: 'Escritura, estructura, ritmo, voz propia.' },
-                { title: 'Escritura', desc: 'Textos poéticos, narrativos, ensayísticos.' },
-                { title: 'Música', desc: 'Creación musical, letra, armonía.' },
-                { title: 'Dirección artística', desc: 'Colaboración externa para proyectos con visión.' },
-              ].map((item, i) => (
-                <div class={`p-5 border border-gold/15 rounded-sm reveal reveal-delay-${i}`}>
-                  <h4 class="font-heading font-light text-parchment mb-2">{item.title}</h4>
-                  <p class="font-body font-light text-parchment/60 text-sm">{item.desc}</p>
-                </div>
-              ))}
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-4 text-center">✧ ¿Para quién es este espacio? ✧</h3>
+            <p class="font-body font-light text-parchment/70 mb-4 text-center">Este espacio es para vos si:</p>
+            <ul class="font-body font-light text-parchment/70 space-y-2 max-w-xl mx-auto">
+              <li>✦ Sentís mucho pero te cuesta ponerlo en palabras</li>
+              <li>✦ Estás en un momento de cambio o confusión</li>
+              <li>✦ Necesitás procesar algo emocionalmente</li>
+              <li>✦ Querés reconectar con tu creatividad</li>
+              <li>✦ Buscás una forma más amorosa de vincularte con vos</li>
+            </ul>
+            <p class="font-body font-light text-parchment/60 mt-6 text-center">
+              No hace falta entender astrología, tarot ni ningún lenguaje simbólico. Acá el cuerpo y la expresión son la puerta de entrada.
+            </p>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-6 text-center">✧ Áreas de exploración ✧</h3>
+            <p class="font-body font-light text-parchment/60 mb-8 text-center">Cada proceso es único. Estas son algunas de las formas que puede tomar:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="p-6 border border-gold/15 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-lg mb-3">✧ Música</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-3">La voz, el sonido y el ritmo como canal emocional.</p>
+                <ul class="font-body font-light text-parchment/50 text-sm space-y-1">
+                  <li>— Liberación emocional</li>
+                  <li>— Exploración de la voz</li>
+                  <li>— Creación intuitiva</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/15 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-lg mb-3">✧ Danza</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-3">El cuerpo como territorio de memoria y transformación.</p>
+                <ul class="font-body font-light text-parchment/50 text-sm space-y-1">
+                  <li>— Movimiento libre y guiado</li>
+                  <li>— Reconexión corporal</li>
+                  <li>— Expresión no verbal</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/15 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-lg mb-3">✧ Dibujo</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-3">La imagen como puente con lo interno.</p>
+                <ul class="font-body font-light text-parchment/50 text-sm space-y-1">
+                  <li>— Dibujo simbólico</li>
+                  <li>— Exploración de imágenes</li>
+                  <li>— Procesos de insight</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/15 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-lg mb-3">✧ Escritura</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-3">La palabra como forma de ordenar y revelar.</p>
+                <ul class="font-body font-light text-parchment/50 text-sm space-y-1">
+                  <li>— Escritura intuitiva</li>
+                  <li>— Diario terapéutico</li>
+                  <li>— Narrativa personal</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/15 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-lg mb-3">✧ Collage</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-3">Construir sentido a partir de fragmentos.</p>
+                <ul class="font-body font-light text-parchment/50 text-sm space-y-1">
+                  <li>— Asociación libre</li>
+                  <li>— Trabajo con símbolos</li>
+                  <li>— Integración interna</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="reveal reveal-delay-2">
-            <h3 class="font-display text-2xl font-semibold text-gold mb-4">Colaboración externa</h3>
-            <p class="font-body font-light text-parchment/70 leading-relaxed">
-              Florencia también ofrece dirección artística como colaboración externa. Si tenés un proyecto creativo y necesitás una mirada que ordene, potencie o dé coherencia, este es el espacio.
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-4 text-center">✧ ¿Cómo es una sesión? ✧</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed text-center">
+              Cada encuentro se adapta a vos. Se combinan una o varias de estas herramientas según lo que estés necesitando atravesar, integrando lo expresivo con una mirada que permita darle sentido a lo que aparece.
+            </p>
+            <p class="font-body font-light text-parchment/70 text-center mt-4">
+              <strong>No es solo hacer. Es expresar + comprender + integrar.</strong>
             </p>
           </div>
 
-          <div class="mt-8 pt-6 border-t border-gold/20 reveal">
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-4 text-center">✧ Resultado del proceso ✧</h3>
+            <p class="font-body font-light text-parchment/60 mb-4 text-center">Las personas que transitan este espacio suelen:</p>
+            <ul class="font-body font-light text-parchment/70 space-y-2 max-w-xl mx-auto">
+              <li>✦ Sentirse más livianas emocionalmente</li>
+              <li>✦ Entender mejor lo que les pasa</li>
+              <li>✦ Desbloquear creatividad</li>
+              <li>✦ Tomar decisiones con más claridad</li>
+              <li>✦ Reconectar con partes propias que estaban apagadas</li>
+            </ul>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-6 text-center">✧ Mi recorrido con el arte ✧</h3>
+            <div class="font-body font-light text-parchment/70 leading-relaxed space-y-4">
+              <p>El arte no llegó a mi vida como una herramienta. Llegó primero como una forma de existir, de percibir y de procesar el mundo.</p>
+              <p>Desde muy chica, la expresión estuvo presente de manera natural:</p>
+              <ul class="space-y-2 ml-4">
+                <li>✦ <strong>A los 4 años</strong>, comencé con modelo de pasarela, y sin darme cuenta, el cuerpo ya buscaba moverse, bailar, expresarse. Desde entonces, nunca dejé de bailar.</li>
+                <li>✦ <strong>A los 11 años</strong>, gané un concurso nacional de dibujo representando simbólicamente la paloma de la paz. Fue uno de mis primeros contactos conscientes con el lenguaje simbólico.</li>
+                <li>✦ <strong>A los 15 años</strong>, gané un concurso de literatura inspirado en El Quijote de la Mancha, descubriendo en la escritura una forma de canalizar lo interno y darle sentido.</li>
+                <li>✦ <strong>A los 22 años</strong>, formé parte de un grupo de danza con el que competimos y ganamos en Buenos Aires. En ese proceso, asumí por primera vez el desafío de crear parte de una coreografía propia, llevando la expresión a un lugar más consciente.</li>
+                <li>✦ <strong>A los 29 años</strong>, comencé a componer música.</li>
+                <li>✦ <strong>A los 32 años</strong>, publiqué y presenté en vivo mi primer álbum, inspirado en la metafísica y las relaciones humanas.</li>
+                <li>✦ <strong>A los 33 y 34 años</strong>, di forma a mi segundo y tercer álbum, profundizando aún más en ese proceso creativo.</li>
+              </ul>
+              <p>Para mí, la música es el mayor catalizador dentro del arte terapéutico. Ya sea tocando instrumentos, cantando, escribiendo poesía, creando desde cero o incluso resignificando canciones existentes cambiando sus letras… las posibilidades son infinitas. Es un lenguaje que permite acceder de forma directa a lo emocional y transformarlo en algo vivo.</p>
+              <p>también, durante varios años, participé en espacios colectivos, tocando en cuerdas de tambores, cantando y compartiendo desde lo grupal, donde el arte se volvía experiencia compartida y viva.</p>
+              <p>Hoy, todo ese recorrido se integra en mi forma de acompañar.</p>
+              <p>Exploro el arte como un camino hacia la conciencia, la compasión y la transformación, pero también como un espacio de juego, libertad y disfrute.</p>
+              <p><strong>Porque crear no es solo sanar. También es volver a habitar la vida con más presencia y verdad.</strong></p>
+              <p class="text-gold/70">No enseño arte. Acompaño procesos a través del arte. Por efecto colateral sí aprendes lenguaje artístico.</p>
+            </div>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8 text-center">
+            <h3 class="font-display text-xl font-semibold text-gold mb-6">✧ Este espacio puede ser para vos ✧</h3>
+            <p class="font-body font-light text-parchment/70 mb-8">
+              Si sentís que algo de todo esto te resuena, no lo pienses tanto. A veces no se trata de entender más, sino de darte el espacio para procesar lo que ya estás viviendo.
+            </p>
             <a
-              href="https://www.youtube.com/@florencia.villeneuve"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 font-body font-light text-gold text-sm tracking-wide hover:text-goldLight transition-colors duration-300"
+              class="cta-button-outline"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              ✧ Consultar por WhatsApp ✧
+            </a>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8 text-center">
+            <p class="font-body font-light text-parchment/60 mb-4">✧ Podés conocer algo de su trabajo acá ✧</p>
+            <a
+              href={youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 font-body font-light text-gold hover:text-goldLight transition-colors"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
-              Mi canal de YouTube
+              YouTube
             </a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section-padding bg-night">
-      <div class="container-padding">
-        <SectionTitle
-          title="Detalles de canciones"
-          subtitle="Proyectos musicales y composiciones."
-        />
-
-        <div class="max-w-3xl mx-auto space-y-6">
-          {songProjects.map((song, i) => (
-            <article class={`p-6 border border-gold/15 rounded-sm reveal reveal-delay-${i}`}>
-              <div class="flex justify-between items-start mb-3">
-                <h4 class="font-display text-xl font-semibold text-parchment">{song.title}</h4>
-                <div class="text-right">
-                  {song.duration && <span class="font-body font-light text-gold/60 text-xs block">{song.duration}</span>}
-                  {song.year && <span class="font-body font-light text-gold/40 text-xs block">{song.year}</span>}
-                </div>
-              </div>
-              <p class="font-body font-light text-parchment/60 text-sm leading-relaxed">{song.description}</p>
-            </article>
-          ))}
-        </div>
-
-        <p class="text-center font-body font-light text-parchment/40 text-xs mt-8 reveal">
-          Más proyectos musicales próximamente.
-        </p>
       </div>
     </section>
   </main>

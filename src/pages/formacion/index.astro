@@ -1,69 +1,161 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
 import SectionTitle from '../../components/ui/SectionTitle.astro';
-import Button from '../../components/ui/Button.astro';
 
 const whatsappUrl = 'https://wa.me/59892497675';
-
-const disciplines = [
-  {
-    title: 'Tarot',
-    description: 'El tarot akáshico como herramienta de autoconocimiento. Desde la iniciación hasta la lectura para otros, un camino de símbolos y significados.',
-    href: '/formacion/tarot',
-    icon: '☽',
-  },
-  {
-    title: 'Astrología',
-    description: 'Astrología simbólica y vivencial. Carta natal, tránsitos, sinastrías, revoluciones solares. Tu mapa del cielo como espejo del alma.',
-    href: '/formacion/astrologia',
-    icon: '✦',
-  },
-  {
-    title: 'Numerología',
-    description: 'Los números como lenguaje simbólico. Camino de vida, expresión, alma, karmas y ciclos anuales. Un sistema que complementa tarot y astrología.',
-    href: '/formacion/numerologia',
-    icon: '◈',
-  },
-];
 ---
 
-<BaseLayout title="Formación" description="Escuela de Florencia Villeneuve. Clases de tarot, astrología y numerología. Online, individuales o de a 2 personas, desde los 9 años." canonical="/formacion">
+<BaseLayout title="Formación" description="Formación – Iniciación a la Esotérica con Florencia Villeneuve. Tarot, astrología, numerología, kábala y alquimia." canonical="/formacion">
   <Header />
   <main>
     <section class="section-padding bg-deep pt-32">
       <div class="container-padding">
         <SectionTitle
-          title="Escuela de Florencia Villeneuve"
-          subtitle="Clases de hasta 2 personas, desde 9 años, online. Tres disciplinas, un mismo camino simbólico."
+          title="✧ Formación – Iniciación a la Esotérica ✧"
+          subtitle="Una puerta de entrada al conocimiento interior"
         />
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-          {disciplines.map((disc, i) => (
-            <a href={disc.href} class={`group p-8 border border-gold/20 rounded-sm transition-all duration-500 hover:border-gold/50 hover:bg-night/50 block reveal reveal-delay-${i}`}>
-              <div class="text-gold text-4xl mb-4">{disc.icon}</div>
-              <h3 class="font-display text-2xl font-semibold text-parchment mb-3 group-hover:text-gold transition-colors duration-300">{disc.title}</h3>
-              <p class="font-body font-light text-parchment/70 leading-relaxed text-sm">{disc.description}</p>
-              <span class="inline-block mt-4 font-body font-light text-gold text-sm tracking-wide border-b border-gold/30 pb-0.5 group-hover:border-gold transition-colors duration-300">
-                Ver programa
-              </span>
-            </a>
-          ))}
-        </div>
+        <div class="max-w-4xl mx-auto space-y-10">
+          <div class="reveal">
+            <p class="font-body font-light text-parchment/70 leading-relaxed text-center mb-6">
+              Esta no es una formación tradicional. No es solo contenido. No es acumulación de información.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed text-center">
+              <strong>Es una iniciación:</strong> un proceso donde empezás a ver, comprender e integrar lo simbólico en tu propia experiencia.
+            </p>
+          </div>
 
-        <div class="max-w-2xl mx-auto text-center">
-          <p class="font-body font-light text-parchment/60 leading-relaxed mb-8 reveal">
-            Todas las clases son online, individuales o de a 2 personas. Se adaptan al ritmo y la necesidad de cada estudiante. No hay edad mínima para empezar — hay ganas de aprender.
-          </p>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-button-outline"
-          >
-            Consultar por WhatsApp
-          </a>
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-4 text-center">✧ ¿Qué significa iniciarse? ✧</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-4">
+              Iniciarse es comenzar a percibir más allá de lo evidente.
+            </p>
+            <p class="font-body font-light text-parchment/70 leading-relaxed mb-4">
+              Es un cambio en la forma de mirar: de lo literal a lo simbólico, de lo externo a lo interno.
+            </p>
+            <p class="font-body font-light text-parchment/70">
+              No se trata solo de aprender herramientas, sino de transformar la manera en que comprendés la realidad.
+            </p>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-4 text-center">✧ ¿Qué es la esotérica? ✧</h3>
+            <p class="font-body font-light text-parchment/70 leading-relaxed">
+              La esotérica trabaja con aquello que no es visible a simple vista: los símbolos, los procesos internos, los ciclos y las dinámicas que sostienen lo que vivimos.
+            </p>
+            <p class="font-body font-light text-parchment/70 mt-4">
+              Es un conocimiento que no se entrega cerrado, sino que se revela a medida que se recorre.
+            </p>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-6 text-center">✧ ¿Cómo es la formación? ✧</h3>
+            <p class="font-body font-light text-parchment/60 mb-8 text-center">La formación se organiza por áreas, que pueden recorrerse de forma individual o integrarse dentro de un camino más amplio.</p>
+
+            <div class="space-y-8">
+              <div class="p-6 border border-gold/20 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-xl mb-2">🔮 Formación en Tarot</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-4">Duración mínima: 7 meses</p>
+                <p class="font-body font-light text-parchment/70 mb-4">Un recorrido para comprender el tarot como lenguaje simbólico profundo, más allá de la lectura literal.</p>
+                <p class="font-body font-light text-parchment/60 mb-3"><strong>Módulos:</strong></p>
+                <ul class="font-body font-light text-parchment/60 text-sm space-y-1 ml-4">
+                  <li>— Introducción al lenguaje simbólico del tarot</li>
+                  <li>— Arcanos mayores: estructura, arquetipos y lectura</li>
+                  <li>— Arcanos menores: integración y dinámica</li>
+                  <li>— Tiradas y construcción de lectura</li>
+                  <li>— Interpretación aplicada a procesos reales</li>
+                  <li>— Desarrollo de criterio propio</li>
+                  <li>— Ética y rol del lector</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/20 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-xl mb-2">🔢 Numerología & Metafísica</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-4">(Método propio) — Duración mínima: 5 meses</p>
+                <p class="font-body font-light text-parchment/70 mb-4">Una formación que integra numerología con principios metafísicos, desde un enfoque desarrollado en mi propio recorrido.</p>
+                <p class="font-body font-light text-parchment/60 mb-3"><strong>Módulos:</strong></p>
+                <ul class="font-body font-light text-parchment/60 text-sm space-y-1 ml-4">
+                  <li>— Bases de la numerología simbólica</li>
+                  <li>— Números como patrones de conciencia</li>
+                  <li>— Lectura de ciclos personales</li>
+                  <li>— Integración con procesos emocionales</li>
+                  <li>— Introducción a principios metafísicos</li>
+                  <li>— Aplicación práctica en la vida cotidiana</li>
+                  <li>— Desarrollo de lectura intuitiva</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/20 rounded-sm bg-gold/5">
+                <h4 class="font-heading font-light text-gold text-xl mb-2">🪐 Formación en Astrología</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-4">Duración mínima: 1 año y medio</p>
+                <p class="font-body font-light text-parchment/70 mb-4">Un camino profundo para comprender la astrología como mapa de procesos y no solo como sistema interpretativo.</p>
+                <p class="font-body font-light text-parchment/60 mb-3"><strong>Módulos:</strong></p>
+                <ul class="font-body font-light text-parchment/60 text-sm space-y-1 ml-4">
+                  <li>— Fundamentos de la carta natal</li>
+                  <li>— Signos, planetas y casas</li>
+                  <li>— Aspectos y dinámica energética</li>
+                  <li>— Lectura integral de carta</li>
+                  <li>— Tránsitos y procesos en el tiempo</li>
+                  <li>— Astrología aplicada a la vida real</li>
+                  <li>— Desarrollo de interpretación propia</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-gold/30 rounded-sm bg-gold/10">
+                <h4 class="font-display text-xl font-semibold text-gold mb-2">✧ Formación Esotérica – Iniciación Integral ✧</h4>
+                <p class="font-body font-light text-parchment/60 text-sm mb-4">Duración mínima: 3 años</p>
+                <p class="font-body font-light text-parchment/70 mb-4">Un recorrido completo donde se integran todas las áreas en un proceso articulado y progresivo.</p>
+                <p class="font-body font-light text-parchment/70 mb-4">Aquí no se estudian herramientas por separado, sino que se aprende a relacionarlas y encarnarlas.</p>
+                <p class="font-body font-light text-parchment/60 mb-2"><strong>Incluye:</strong></p>
+                <ul class="font-body font-light text-parchment/70 space-y-1 ml-4">
+                  <li>✦ Tarot</li>
+                  <li>✦ Astrología</li>
+                  <li>✦ Numerología & Metafísica</li>
+                  <li>✦ Kábala</li>
+                  <li>✦ Alquimia</li>
+                  <li>✦ Magia</li>
+                </ul>
+                <p class="font-body font-light text-parchment/70 mt-4">Este espacio propone una verdadera iniciación: un proceso sostenido de transformación, comprensión y práctica.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8">
+            <h3 class="font-display text-xl font-semibold text-gold mb-6 text-center">✧ Modalidad de cursada ✧</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 border border-gold/15 rounded-sm">
+                <ul class="font-body font-light text-parchment/70 space-y-2">
+                  <li>✦ Clases particulares o en grupos reducidos (hasta 3 personas)</li>
+                  <li>✦ Modalidad online</li>
+                  <li>✦ Material de apoyo incluido</li>
+                  <li>✦ Entrega de constancia de culminación y formación</li>
+                </ul>
+              </div>
+              <div class="p-5 border border-gold/15 rounded-sm">
+                <h4 class="font-heading font-light text-gold mb-3">✧ Inversión ✧</h4>
+                <ul class="font-body font-light text-parchment/70 space-y-2">
+                  <li>✦ Pagos mensuales</li>
+                  <li>✦ Descuentos disponibles por pagos adelantados (más de 3 meses)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal border-t border-gold/20 pt-8 text-center">
+            <p class="font-body font-light text-parchment/70 mb-6">
+              Si sentís que este camino es para vos, podés escribirme y vemos desde dónde comenzar.
+            </p>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button-outline"
+            >
+              ✧ Consultar por ingreso ✧
+            </a>
+          </div>
         </div>
       </div>
     </section>
