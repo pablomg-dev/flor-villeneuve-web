@@ -5,7 +5,7 @@ import Footer from '../components/layout/Footer.astro';
 import SectionTitle from '../components/ui/SectionTitle.astro';
 ---
 
-<BaseLayout title="Bio" description="Bio de Florencia Villeneuve — mentora, astróloga y escritora en Montevideo, Uruguay." canonical="/bio">
+<BaseLayout title="Sobre mí" description="Bio de Florencia Villeneuve — mentora, astróloga y escritora en Montevideo, Uruguay." canonical="/bio">
   <Header />
   <main>
     <section class="section-padding bg-deep pt-32">
@@ -22,11 +22,16 @@ import SectionTitle from '../components/ui/SectionTitle.astro';
             class="aspect-[3/4] max-w-sm mx-auto object-cover rounded-sm border border-gold/20 mb-12 reveal"
           />
 
-          <h3 class="font-display text-2xl font-semibold text-gold mb-6 text-center reveal reveal-delay-1">
-            Mi recorrido
-          </h3>
+          <div class="space-y-6 mt-8">
+            <p class="font-body font-light text-parchment/80 leading-relaxed reveal reveal-delay-1">
+              Mi recorrido no es lineal ni académico en el sentido tradicional. Es un camino vivido.
+            </p>
+            <p class="font-body font-light text-parchment/80 leading-relaxed reveal reveal-delay-2">
+              He compartido este proceso en distintos formatos: columnas de radio, contenido en Spotify, divulgación en YouTube y también a través de la música, donde publiqué tres álbumes de autoría propia.
+            </p>
+          </div>
 
-          <div class="space-y-6">
+          <div class="space-y-6 mt-12">
             <p class="font-body font-light text-parchment/80 leading-relaxed reveal reveal-delay-1">
               Acompaño procesos personales desde una premisa que guía mi forma de mirar:
             </p>
@@ -67,7 +72,7 @@ import SectionTitle from '../components/ui/SectionTitle.astro';
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
-                Mi canal de YouTube
+                Mi canal personal
               </a>
             </div>
           </div>
