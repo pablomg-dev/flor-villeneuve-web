@@ -9,4 +9,5 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  favicon: '/favicon.svg',
 });

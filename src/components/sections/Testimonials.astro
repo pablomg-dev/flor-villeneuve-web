@@ -1,0 +1,82 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const testimonials = [
+  "Gracias por la devolución de la instancia de asesoría para mi proyecto y por hacerme dar cuenta de que tengo que PONERLE corazón. Está muy completa y es bien exhaustiva. Ya estoy tomando algunas sugerencias para la creación del logo.",
+  "Es una profesional muy comprometida, seria y responsable. Tiene en cuenta todos los puntos de vista de las diferentes situaciones y los evalúa uno por uno, antes de tomar una decisión. Es muy organizada y detallista, con un amplio sentido humano.",
+  "El contenido de la sesión fue muy nutrido y me permitió ver las cosas de una manera más amable. Siempre se necesitan otras linternas y fuiste esa luz que necesitaba en el momento. Te estoy profundamente agradecida.",
+  "Tu forma de ver el mundo, tan curiosa y sorpresiva me llamó la atención. Durante la sesión me sentí muy cómoda, maravillada de toda la claridad a través de la información que brinda la carta natal. ¡Gracias!",
+  "Ha sido una figura clave en nuestra evolución personal y de pareja durante estos últimos dos años. Su honrada y honesta colaboración, guiada por un profundo conocimiento en el arte del crecimiento personal, ha sido de un valor incalculable para nosotros.",
+];
+---
+
+<section class="section-padding bg-deep">
+  <div class="container-padding">
+    <SectionTitle
+      title="Voces"
+      subtitle="Testimonios de personas que acompañé."
+    />
+    <div class="max-w-4xl mx-auto">
+      <div id="testimonials-track" class="overflow-hidden">
+        <div id="testimonials-inner" class="flex transition-transform duration-500 ease-out">
+          {testimonials.map((t, i) => (
+            <div class="testimonial-slide w-full flex-shrink-0 px-4">
+              <blockquote class="text-center">
+                <p class="font-display text-xl md:text-2xl text-parchment/80 leading-relaxed italic mb-6">
+                  "{t}"
+                </p>
+              </blockquote>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="flex justify-center gap-3 mt-8">
+        {testimonials.map((_, i) => (
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-gold/30 transition-colors duration-300"
+            data-index={i}
+            aria-label={`Ver testimonio ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('testimonials-inner');
+  const dots = document.querySelectorAll('.testimonial-dot');
+  let currentIndex = 0;
+  let interval: number;
+
+  function showTestimonial(index: number) {
+    if (!track) return;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.remove('bg-gold/30');
+        dot.classList.add('bg-gold');
+      } else {
+        dot.classList.remove('bg-gold');
+        dot.classList.add('bg-gold/30');
+      }
+    });
+    currentIndex = index;
+  }
+
+  function next() {
+    const nextIndex = (currentIndex + 1) % dots.length;
+    showTestimonial(nextIndex);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      showTestimonial(i);
+      interval = setInterval(next, 5000) as unknown as number;
+    });
+  });
+
+  showTestimonial(0);
+  interval = setInterval(next, 5000) as unknown as number;
+</script>
