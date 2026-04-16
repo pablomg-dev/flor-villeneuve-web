@@ -2,7 +2,7 @@
 
 Sitio web de **Florencia Villeneuve** — mentora esotérica, astróloga y escritora con base en Montevideo, Uruguay.
 
-Migración de WordPress (`florhesiendo.com`) a un stack moderno con Astro.
+Migración de WordPress para el nuevo sitio `florenciavilleneuve.com`.
 
 ## Stack
 
@@ -141,7 +141,7 @@ Netlify detecta automáticamente los formularios con `data-netlify="true"` y env
 
 ## Notas
 
-- Dominio actual: `florhesiendo.com` — posible migración futura a `villeneuve.studio`
+- Dominio actual: `florenciavilleneuve.com` (Anteriormente `florhesiendo.com`)
 - No hay precios en ninguna página — todo se coordina por WhatsApp (`+598 92 497 675`)
 - Sección de proyectos musicales en `/creativos` con placeholders listos para completar
 - Red social: [@florhesiendo](https://instagram.com/florhesiendo)
