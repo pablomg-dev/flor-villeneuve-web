@@ -3,8 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import SectionTitle from '../components/ui/SectionTitle.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
 
 const whatsappUrl = 'https://wa.me/59892497675';
+
+const mentoriaTestimonials = [
+  "Hacer acompañamiento con Flor te lleva a conectar con tu verdadera esencia. Busca diferentes caminos para llegar más profundo y aplicarlo en la vida cotidiana. Siento que trabajar con ella es que siempre pone en acción. Flor hace que las cosas sucedan.",
+  "La asesoría para mi negocio desde la carta astral me encantó. Me ayudó a entender su energía y sombra, viendo el negocio como una extensión de nosotros con su propia entidad. Te recomiendo absolutamente.",
+  "El contenido de la sesión fue muy nutrido y me permitió ver las cosas de una manera más amable. Siempre se necesitan otras linternas y fuiste esa luz que necesitaba en el momento. Te estoy profundamente agradecida.",
+  "Aunque no te escriba ni te mande audios, casi todos los días pienso en vos. Muchas gracias por todo lo que has aportado en mi vida y gracias por acompañarme todo este tiempo. Fuiste, sos y serás alguien muy importante para mí y te llevo siempre en un lugarcito en mi corazón.",
+  "Gracias por tu acompañamiento, tu forma de ayudar es transformadora. Me encantó la primera sesión, tu trabajo es excelente y desde esa primera sesión me aportaste un montón de información. Abriste la cajita de Pandora.",
+];
 ---
 
 <BaseLayout title="Mentorías" description="Mentorías personalizadas con Florencia Villeneuve. Sesiones individuales de acompañamiento integrando tarot, astrología y numerología." canonical="/mentoria">
@@ -246,9 +255,10 @@ const whatsappUrl = 'https://wa.me/59892497675';
             </div>
           </article>
         </div>
-
       </div>
     </section>
+
+    <Testimonials testimonials={mentoriaTestimonials} class="pt-0" />
   </main>
   <Footer />
 </BaseLayout>
