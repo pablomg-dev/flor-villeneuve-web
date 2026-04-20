@@ -13,6 +13,10 @@ export default {
         earth:     '#4A3728',
         mist:      '#F5F0E8',
         ink:       '#1C1612',
+        // Aliases for modern naming
+        cream:     '#E8DCC8',
+        space:     '#0D1429',
+        primary:   '#C9A96E',
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
