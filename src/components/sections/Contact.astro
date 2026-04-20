@@ -1,20 +1,43 @@
-﻿---
+---
 import SectionTitle from '../ui/SectionTitle.astro';
 
 const whatsappUrl = 'https://wa.me/59892497675';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  successMessage?: string;
+}
+
+const { 
+  title = "Contacto", 
+  subtitle = "Escribime. Toda consulta se responde con calma y atención.",
+  successMessage = "¡Gracias! Tu mensaje ha sido enviado correctamente. Te responderé a la brevedad."
+} = Astro.props;
 ---
 
-<section class="section-padding bg-night">
+<section class="section-padding bg-night" id="contact">
   <div class="container-padding">
     <SectionTitle
-      title="Contacto"
-      subtitle="Escribime. Toda consulta se responde con calma y atención."
+      title={title}
+      subtitle={subtitle}
     />
-    <div class="max-w-xl mx-auto reveal">
-      <form name="contacto" method="POST" data-netlify="true" class="space-y-6">
-        <input type="hidden" name="form-name" value="contacto" />
+    <div class="max-w-xl mx-auto reveal bg-night border border-gold/10 p-8 rounded-sm shadow-2xl relative">
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field"
+        class="space-y-6"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <p class="hidden">
+          <label>Este campo no debe ser completado: <input name="bot-field" /></label>
+        </p>
+
         <div>
-          <label for="name" class="block font-body font-light text-parchment/70 text-sm mb-2">Nombre</label>
+          <label for="name" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Nombre</label>
           <input
             type="text"
             id="name"
@@ -27,7 +50,7 @@ const whatsappUrl = 'https://wa.me/59892497675';
         </div>
 
         <div>
-          <label for="email" class="block font-body font-light text-parchment/70 text-sm mb-2">Email</label>
+          <label for="email" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Email</label>
           <input
             type="email"
             id="email"
@@ -40,7 +63,7 @@ const whatsappUrl = 'https://wa.me/59892497675';
         </div>
 
         <div>
-          <label for="phone" class="block font-body font-light text-parchment/70 text-sm mb-2">Teléfono <span class="text-parchment/40">(opcional)</span></label>
+          <label for="phone" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Teléfono <span class="text-parchment/40">(opcional)</span></label>
           <div class="flex gap-3">
             <select
               id="country-code"
@@ -58,7 +81,7 @@ const whatsappUrl = 'https://wa.me/59892497675';
               <option value="+39">+39</option>
               <option value="+52">+52</option>
               <option value="+56">+56</option>
-              <option value="+57">+57</option>
+              <option value="+5 Columbia">+57</option>
               <option value="+51">+51</option>
             </select>
             <input
@@ -73,7 +96,7 @@ const whatsappUrl = 'https://wa.me/59892497675';
         </div>
 
         <div>
-          <label for="message" class="block font-body font-light text-parchment/70 text-sm mb-2">Mensaje</label>
+          <label for="message" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Mensaje</label>
           <textarea
             id="message"
             name="message"
@@ -86,13 +109,59 @@ const whatsappUrl = 'https://wa.me/59892497675';
 
         <button
           type="submit"
-          class="cta-button w-full"
+          id="submit-btn"
+          class="cta-button w-full flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Enviar mensaje
+          <span id="btn-text">Enviar mensaje</span>
+          <svg 
+            id="btn-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            width="18" 
+            height="18" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            class="group-hover:translate-x-1 transition-transform"
+          >
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
         </button>
       </form>
 
-      <div class="text-center mt-8">
+      <!-- Mensaje de Éxito -->
+      <div 
+        id="form-success" 
+        class="hidden mt-6 p-8 bg-gold/5 border border-gold/20 rounded-sm text-center animate-in fade-in zoom-in duration-500"
+        role="status"
+        aria-live="polite"
+        tabindex="-1"
+      >
+        <div class="flex flex-col items-center gap-4">
+          <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="font-body font-light text-parchment text-lg">{successMessage}</p>
+        </div>
+      </div>
+
+      <!-- Mensaje de Error -->
+      <div 
+        id="form-error" 
+        class="hidden mt-6 p-6 bg-red-900/10 border border-red-900/20 rounded-sm text-center animate-in fade-in zoom-in duration-500"
+        role="alert"
+        aria-live="assertive"
+        tabindex="-1"
+      >
+        <p class="font-body font-light text-red-400">Hubo un error al enviar el mensaje. Por favor, reintentá o escribime por WhatsApp.</p>
+      </div>
+
+      <div class="text-center mt-8" id="whatsapp-container">
         <a
           href={whatsappUrl}
           target="_blank"
@@ -105,3 +174,75 @@ const whatsappUrl = 'https://wa.me/59892497675';
     </div>
   </div>
 </section>
+
+<script>
+  function initContact() {
+    const form = document.querySelector('form[name="contact"]') as HTMLFormElement;
+    const successMsg = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const whatsappContainer = document.getElementById('whatsapp-container');
+    
+    if (form && successMsg && errorMsg && submitBtn && btnText) {
+      const originalBtnText = btnText.textContent;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // 1. Estado de carga: Deshabilitar botón y cambiar texto
+        submitBtn.disabled = true;
+        btnText.textContent = "Enviando…";
+        if (btnIcon) btnIcon.classList.add('hidden');
+        errorMsg.classList.add('hidden');
+        
+        // 3. Body con URLSearchParams
+        const formData = new FormData(form);
+        const body = new URLSearchParams(formData as any).toString();
+        
+        try {
+          // 2. Fetch siempre a "/"
+          const response = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: body,
+          });
+          
+          if (response.ok) {
+            // Éxito: El formulario desaparece suavemente
+            form.style.opacity = "0";
+            form.style.transition = "opacity 0.5s ease";
+            if (whatsappContainer) whatsappContainer.style.opacity = "0";
+            
+            setTimeout(() => {
+              form.classList.add('hidden');
+              if (whatsappContainer) whatsappContainer.classList.add('hidden');
+              successMsg.classList.remove('hidden');
+              
+              // 5. Accesibilidad: focus y scroll
+              successMsg.focus();
+              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+          } else {
+            throw new Error('Netlify respondio con error');
+          }
+        } catch (error) {
+          console.error('Error al enviar formulario:', error);
+          
+          // Restaurar si hay error
+          submitBtn.disabled = false;
+          btnText.textContent = originalBtnText;
+          if (btnIcon) btnIcon.classList.remove('hidden');
+          
+          errorMsg.classList.remove('hidden');
+          errorMsg.focus();
+          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    }
+  }
+
+  // Ejecutar en cada carga de página (Soporte Astro View Transitions)
+  document.addEventListener("astro:page-load", initContact);
+</script>
