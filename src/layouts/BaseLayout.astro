@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { title, description, canonical = Astro.url.pathname } = Astro.props;
-const fullTitle = title + ' — Florencia Villeneuve';
+const fullTitle = title === 'Inicio' ? 'Florencia Villeneuve' : `${title} — Florencia Villeneuve`;
 const ogImage = '/img/og-image.png';
 ---
 
