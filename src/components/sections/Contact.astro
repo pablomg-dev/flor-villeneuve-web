@@ -22,7 +22,7 @@ const {
       title={title}
       subtitle={subtitle}
     />
-    <div class="max-w-xl mx-auto reveal bg-night border border-gold/10 p-8 rounded-sm shadow-2xl relative">
+    <div class="max-w-xl mx-auto reveal bg-night border border-gold/10 p-6 sm:p-8 rounded-sm shadow-2xl relative">
       <form 
         id="contact-form"
         name="contact" 
@@ -65,32 +65,32 @@ const {
 
         <div>
           <label for="phone" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Teléfono <span class="text-parchment/40">(opcional)</span></label>
-          <div class="flex gap-3">
+          <div class="flex gap-2 sm:gap-3">
             <select
               id="country-code"
               name="countryCode"
-              class="w-24 px-3 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+              class="w-36 sm:w-48 px-2 sm:px-3 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
             >
-              <option value="+598">+598</option>
-              <option value="+54">+54</option>
-              <option value="+55">+55</option>
-              <option value="+1">+1</option>
-              <option value="+34">+34</option>
-              <option value="+44">+44</option>
-              <option value="+33">+33</option>
-              <option value="+49">+49</option>
-              <option value="+39">+39</option>
-              <option value="+52">+52</option>
-              <option value="+56">+56</option>
-              <option value="+57">+57</option>
-              <option value="+51">+51</option>
+              <option value="+598">Uruguay (+598)</option>
+              <option value="+54">Argentina (+54)</option>
+              <option value="+55">Brasil (+55)</option>
+              <option value="+56">Chile (+56)</option>
+              <option value="+57">Colombia (+57)</option>
+              <option value="+51">Perú (+51)</option>
+              <option value="+52">México (+52)</option>
+              <option value="+34">España (+34)</option>
+              <option value="+1">EE.UU. / Canadá (+1)</option>
+              <option value="+33">Francia (+33)</option>
+              <option value="+49">Alemania (+49)</option>
+              <option value="+39">Italia (+39)</option>
+              <option value="+44">Reino Unido (+44)</option>
             </select>
             <input
               type="tel"
               id="phone"
               name="phone"
               autocomplete="tel"
-              class="flex-1 px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
+              class="flex-1 min-w-0 px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300"
               placeholder="Tu teléfono"
             />
           </div>
