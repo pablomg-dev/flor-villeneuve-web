@@ -1,4 +1,4 @@
-﻿---
+---
 import Nav from './Nav.astro';
 import type { NavItem } from '../../types';
 
@@ -9,7 +9,7 @@ import type { NavItem } from '../../types';
     { label: 'Arteterapia', href: '/arteterapia' },
     { label: 'Sobre mí', href: '/bio' },
     { label: 'Preguntas frecuentes', href: '/preguntas' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Contacto', href: '/#contacto' },
 ];
 ---
 
@@ -68,5 +68,18 @@ import type { NavItem } from '../../types';
         }, 300);
       }
     }
+  });
+
+  // Cerrar menú al hacer clic en un link (útil para anchors en la misma página)
+  const mobileLinks = menu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu?.classList.add('opacity-0', '-translate-y-2', 'invisible');
+      menu?.classList.remove('opacity-100', 'translate-y-0', 'visible');
+      setTimeout(() => {
+        menu?.classList.add('hidden');
+      }, 300);
+    });
   });
 </script>
