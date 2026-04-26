@@ -262,3 +262,36 @@ const mentoriaTestimonials = [
   </main>
   <Footer />
 </BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mentorías personalizadas",
+  "description": "Mentorías personalizadas con Florencia Villeneuve. Sesiones individuales de acompañamiento integrando tarot, astrología y numerología.",
+  "url": "https://florenciavilleneuve.com/mentoria",
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Villeneuve",
+    "url": "https://florenciavilleneuve.com"
+  },
+  "serviceType": "Mentoría espiritual y simbólica",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Modalidades de mentoría",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sesión única" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Proceso mensual" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mentoría Integral Anual" } }
+    ]
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Uruguay"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://wa.me/59892497675"
+  }
+}
+</script>

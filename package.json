@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/netlify": "^5.5.4",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^5.1.2",
     "@fontsource/cormorant": "^5.1.1",
     "@fontsource/cormorant-garamond": "^5.1.1",

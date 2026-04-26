@@ -9,7 +9,9 @@ interface Props {
 
 const { title, description, canonical = Astro.url.pathname } = Astro.props;
 const fullTitle = title === 'Inicio' ? 'Florencia Villeneuve' : `${title} — Florencia Villeneuve`;
-const ogImage = '/img/og-image.png';
+const siteUrl = 'https://florenciavilleneuve.com';
+const ogImage = `${siteUrl}/img/og-image.png`;
+const canonicalUrl = `${siteUrl}${canonical}`;
 ---
 
 <!doctype html>
@@ -18,12 +20,23 @@ const ogImage = '/img/og-image.png';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="es_UY" />
     <meta property="og:type" content="website" />
-    <link rel="canonical" href={'https://florenciavilleneuve.com' + canonical} />
+    <meta property="og:site_name" content="Florencia Villeneuve" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{fullTitle}</title>
   </head>
