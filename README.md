@@ -46,15 +46,15 @@ src/
 
 ## Navegación
 
-| # | Sección | Ruta |
-|---|---------|------|
-| 1 | Inicio | `/` |
-| 2 | Mentoría | `/mentoria` |
-| 3 | Formación | `/formacion` (tarot, astrología, numerología) |
-| 4 | Packs | `/packs` |
-| 5 | Creativos | `/creativos` |
-| 6 | Bio | `/bio` |
-| 7 | Contacto | `/contacto` |
+| #   | Sección   | Ruta                                          |
+| --- | --------- | --------------------------------------------- |
+| 1   | Inicio    | `/`                                           |
+| 2   | Mentoría  | `/mentoria`                                   |
+| 3   | Formación | `/formacion` (tarot, astrología, numerología) |
+| 4   | Packs     | `/packs`                                      |
+| 5   | Creativos | `/creativos`                                  |
+| 6   | Bio       | `/bio`                                        |
+| 7   | Contacto  | `/contacto`                                   |
 
 ## Desarrollo
 
@@ -71,35 +71,35 @@ pnpm install
 
 ### Comandos
 
-| Comando | Acción |
-|---------|--------|
-| `pnpm dev` | Servidor de desarrollo |
-| `pnpm build` | Build de producción (typecheck + build) |
-| `pnpm preview` | Preview del build local |
-| `pnpm astro ...` | CLI de Astro |
+| Comando          | Acción                                  |
+| ---------------- | --------------------------------------- |
+| `pnpm dev`       | Servidor de desarrollo                  |
+| `pnpm build`     | Build de producción (typecheck + build) |
+| `pnpm preview`   | Preview del build local                 |
+| `pnpm astro ...` | CLI de Astro                            |
 
 ## Diseño
 
 ### Paleta de colores
 
-| Token | Color | Uso |
-|-------|-------|-----|
-| `night` | `#1A1A2E` | Fondos oscuros secundarios |
-| `deep` | `#0D1429` | Fondo principal (dark mode) |
-| `gold` | `#C9A96E` | Acento, CTAs, hover de links |
-| `goldLight` | `#E2C99A` | Hover de acento |
-| `parchment` | `#E8DCC8` | Texto sobre fondo oscuro |
-| `earth` | `#4A3728` | Texto sobre fondo claro |
-| `mist` | `#F5F0E8` | Fondos claros (secciones alternadas) |
-| `ink` | `#1C1612` | Texto oscuro principal |
+| Token       | Color     | Uso                                  |
+| ----------- | --------- | ------------------------------------ |
+| `night`     | `#1A1A2E` | Fondos oscuros secundarios           |
+| `deep`      | `#0D1429` | Fondo principal (dark mode)          |
+| `gold`      | `#C9A96E` | Acento, CTAs, hover de links         |
+| `goldLight` | `#E2C99A` | Hover de acento                      |
+| `parchment` | `#E8DCC8` | Texto sobre fondo oscuro             |
+| `earth`     | `#4A3728` | Texto sobre fondo claro              |
+| `mist`      | `#F5F0E8` | Fondos claros (secciones alternadas) |
+| `ink`       | `#1C1612` | Texto oscuro principal               |
 
 ### Tipografía
 
-| Rol | Fuente | Estilo |
-|-----|--------|--------|
+| Rol                | Fuente             | Estilo                                          |
+| ------------------ | ------------------ | ----------------------------------------------- |
 | Display / Headings | Cormorant Garamond | Serif elegante, evoca lo místico y lo literario |
-| Subheadings | Cormorant | Variante refinada para subtítulos |
-| Body / UI | Jost | Sans-serif geométrica, legible y limpia |
+| Subheadings        | Cormorant          | Variante refinada para subtítulos               |
+| Body / UI          | Jost               | Sans-serif geométrica, legible y limpia         |
 
 ### Principios
 
@@ -121,20 +121,20 @@ pnpm install
 
 Configurados en `netlify.toml` para preservar SEO de la web anterior:
 
-| Desde | A |
-|-------|---|
-| `/formaciones` | `/formacion` |
-| `/guias-y-acompanamientos` | `/mentoria` |
-| `/about` | `/bio` |
-| `/mi-libro` | `/bio` |
-| `/contact` | `/contacto` |
+| Desde                      | A            |
+| -------------------------- | ------------ |
+| `/formaciones`             | `/formacion` |
+| `/guias-y-acompanamientos` | `/mentoria`  |
+| `/about`                   | `/bio`       |
+| `/mi-libro`                | `/bio`       |
+| `/contact`                 | `/contacto`  |
 
 ## Formularios
 
 El formulario de contacto usa **Netlify Forms** — sin API routes ni dependencias externas.
 
-| Formulario | `name` | Dónde |
-|-----------|--------|-------|
+| Formulario       | `name`     | Dónde              |
+| ---------------- | ---------- | ------------------ |
 | Contacto general | `contacto` | `/contacto` y home |
 
 Netlify detecta automáticamente los formularios con `data-netlify="true"` y envía las respuestas al dashboard.
@@ -144,7 +144,7 @@ Netlify detecta automáticamente los formularios con `data-netlify="true"` y env
 - Dominio actual: `florenciavilleneuve.com` (Anteriormente `florhesiendo.com`)
 - No hay precios en ninguna página — todo se coordina por WhatsApp (`+598 92 497 675`)
 - Sección de proyectos musicales en `/creativos` con placeholders listos para completar
-- Red social: [@florhesiendo](https://instagram.com/florhesiendo)
+- Red social: [@florencia.villeneuve](https://instagram.com/florencia.villeneuve)
 
 ## Licencia
 
