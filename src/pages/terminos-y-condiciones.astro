@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+---
+
+<BaseLayout
+  title="Términos y Condiciones"
+  description="Términos y condiciones de uso del sitio web de Florencia Villeneuve."
+>
+  <Header />
+  <main class="section-padding pt-32">
+    <div class="container-padding max-w-4xl mx-auto">
+      <h1 class="font-display text-4xl md:text-5xl text-gold mb-12">Términos y Condiciones</h1>
+      
+      <div class="prose prose-invert max-w-none font-body font-light text-parchment/80 leading-relaxed space-y-8">
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">1. Introducción</h2>
+          <p>
+            Bienvenido al sitio web de Florencia Villeneuve. Al acceder y utilizar este sitio, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones de uso. Si no está de acuerdo con alguna parte de estos términos, le rogamos que no utilice nuestro sitio web.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">2. Propiedad Intelectual</h2>
+          <p>
+            Todo el contenido publicado en este sitio, incluyendo textos, gráficos, logotipos, imágenes, audios y videos, es propiedad de Florencia Villeneuve o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual internacionales.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">3. Uso del Sitio</h2>
+          <p>
+            El uso de este sitio web es para fines personales e informativos. No está permitido:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Reproducir, duplicar o copiar el material de este sitio sin consentimiento previo.</li>
+            <li>Utilizar el sitio de cualquier manera que cause o pueda causar daño al sitio o deterioro de la disponibilidad o accesibilidad.</li>
+            <li>Utilizar el sitio para fines fraudulentos o delictivos.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">4. Servicios y Mentorías</h2>
+          <p>
+            La información sobre mentorías, formación y arteterapia proporcionada en este sitio es orientativa. Florencia Villeneuve se reserva el derecho de modificar los contenidos, precios y disponibilidad de sus servicios en cualquier momento.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">5. Limitación de Responsabilidad</h2>
+          <p>
+            Florencia Villeneuve no será responsable de ningún daño directo, indirecto, incidental o consecuente que resulte del uso o la imposibilidad de uso de este sitio web o de la información contenida en él.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">6. Modificaciones</h2>
+          <p>
+            Nos reservamos el derecho de revisar estos términos y condiciones en cualquier momento. Los términos actualizados entrarán en vigor a partir de su publicación en el sitio web.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-gold font-display text-2xl mb-4">7. Contacto</h2>
+          <p>
+            Si tiene alguna pregunta sobre estos términos, puede contactarnos a través de:
+            <br />
+            Email: florencia.villeneuve@gmail.com
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

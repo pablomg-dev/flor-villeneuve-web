@@ -1,14 +1,14 @@
 ---
-import type { NavItem } from '../../types';
+import type { NavItem } from "../../types";
 
 const navItems: NavItem[] = [
-    { label: 'Inicio', href: '/' },
-    { label: 'Mentorías', href: '/mentoria' },
-    { label: 'Formación', href: '/formacion' },
-    { label: 'Arteterapia', href: '/arteterapia' },
-    { label: 'Sobre mí', href: '/bio' },
-    { label: 'Preguntas frecuentes', href: '/preguntas' },
-    { label: 'Contacto', href: '/#contacto' },
+  { label: "Inicio", href: "/" },
+  { label: "Mentorías", href: "/mentoria" },
+  { label: "Formación", href: "/formacion" },
+  { label: "Arteterapia", href: "/arteterapia" },
+  { label: "Sobre mí", href: "/bio" },
+  { label: "Preguntas frecuentes", href: "/preguntas" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -16,31 +16,45 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-night border-t border-gold/10 section-padding">
   <div class="container-padding">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
       <div>
-        <a href="/" class="font-display text-2xl font-semibold text-gold tracking-wide">
+        <a
+          href="/"
+          class="font-display text-2xl font-semibold text-gold tracking-wide"
+        >
           Florencia Villeneuve
         </a>
-        <p class="font-body font-light text-parchment/60 mt-3 text-sm leading-relaxed">
+        <p
+          class="font-body font-light text-parchment/60 mt-3 text-sm leading-relaxed"
+        >
           Mentorías · Formación · Arteterapia
         </p>
       </div>
 
       <div>
-        <h3 class="font-heading font-light text-gold tracking-wide mb-4">Navegación</h3>
+        <h3 class="font-heading font-light text-gold tracking-wide mb-4">
+          Navegación
+        </h3>
         <ul class="space-y-2">
-          {navItems.map((item) => (
-            <li>
-              <a href={item.href} class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300">
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div>
-        <h3 class="font-heading font-light text-gold tracking-wide mb-4">Conectá</h3>
+        <h3 class="font-heading font-light text-gold tracking-wide mb-4">
+          Conectá
+        </h3>
         <ul class="space-y-3">
           <li>
             <a
@@ -72,14 +86,45 @@ const currentYear = new Date().getFullYear();
           </li>
         </ul>
       </div>
+
+      <div>
+        <h3 class="font-heading font-light text-gold tracking-wide mb-4">
+          Términos
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="/terminos-y-condiciones"
+              class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300"
+            >
+              Términos y condiciones
+            </a>
+          </li>
+          <li>
+            <a
+              href="/politica-de-cookies"
+              class="font-body font-light text-parchment/60 text-sm hover:text-gold transition-colors duration-300"
+            >
+              Política de Cookies
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="gold-divider mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div
+      class="gold-divider mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
       <p class="font-body font-light text-parchment/40 text-xs">
         &copy; {currentYear} Florencia Villeneuve. Todos los derechos reservados.
       </p>
       <p class="font-body font-light text-parchment/40 text-xs">
-        Desarrollado por <a href="https://pablomgdev.lat/" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors duration-300">Pablo MG</a>
+        Desarrollado por <a
+          href="https://pablomgdev.lat/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-gold transition-colors duration-300">Pablo MG</a
+        >
       </p>
     </div>
   </div>

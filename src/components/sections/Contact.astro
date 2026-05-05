@@ -1,7 +1,7 @@
 ---
-import SectionTitle from '../ui/SectionTitle.astro';
+import SectionTitle from "../ui/SectionTitle.astro";
 
-const whatsappUrl = 'https://wa.me/59892497675';
+const whatsappUrl = "https://wa.me/59892497675";
 
 interface Props {
   title?: string;
@@ -9,36 +9,43 @@ interface Props {
   successMessage?: string;
 }
 
-const { 
-  title = "Contacto", 
+const {
+  title = "Contacto",
   subtitle = "Escribime. Toda consulta se responde con calma y atención.",
-  successMessage = "¡Gracias! Tu mensaje ha sido enviado correctamente. Te responderé a la brevedad."
+  successMessage = "¡Gracias! Tu mensaje ha sido enviado correctamente. Te responderé a la brevedad.",
 } = Astro.props;
 ---
 
 <section class="section-padding bg-night" id="contacto">
   <div class="container-padding">
-    <SectionTitle
-      title={title}
-      subtitle={subtitle}
-    />
-    <div class="max-w-xl mx-auto reveal bg-night border border-gold/10 p-6 sm:p-8 rounded-sm shadow-2xl relative">
-      <form 
+    <SectionTitle title={title} subtitle={subtitle} />
+    <div
+      class="max-w-xl mx-auto reveal bg-night border border-gold/10 p-6 sm:p-8 rounded-sm shadow-2xl relative"
+    >
+      <form
         id="contact-form"
-        name="contact" 
-        method="POST" 
-        data-netlify="true" 
+        name="contact"
+        method="POST"
+        data-netlify="true"
         data-netlify-honeypot="bot-field"
         class="space-y-6 transition-all duration-500"
       >
         <input type="hidden" name="form-name" value="contact" />
-        
+
         <p class="hidden">
-          <label>Este campo no debe ser completado: <input name="bot-field" /></label>
+          <label
+            >Este campo no debe ser completado: <input
+              name="bot-field"
+            /></label
+          >
         </p>
 
         <div>
-          <label for="name" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Nombre</label>
+          <label
+            for="name"
+            class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1"
+            >Nombre</label
+          >
           <input
             type="text"
             id="name"
@@ -51,7 +58,11 @@ const {
         </div>
 
         <div>
-          <label for="email" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Email</label>
+          <label
+            for="email"
+            class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1"
+            >Email</label
+          >
           <input
             type="email"
             id="email"
@@ -64,7 +75,11 @@ const {
         </div>
 
         <div>
-          <label for="phone" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Teléfono <span class="text-parchment/40">(opcional)</span></label>
+          <label
+            for="phone"
+            class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1"
+            >Teléfono <span class="text-parchment/40">(opcional)</span></label
+          >
           <div class="flex gap-2 sm:gap-3">
             <select
               id="country-code"
@@ -97,15 +112,18 @@ const {
         </div>
 
         <div>
-          <label for="message" class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1">Mensaje</label>
+          <label
+            for="message"
+            class="block font-body font-light text-parchment/70 text-sm mb-2 ml-1"
+            >Mensaje</label
+          >
           <textarea
             id="message"
             name="message"
             required
             rows="5"
             class="w-full px-4 py-3 bg-night border border-gold/20 rounded-sm text-parchment font-body font-light focus:outline-none focus:border-gold/50 transition-colors duration-300 resize-none"
-            placeholder="Contame qué necesitás..."
-          ></textarea>
+            placeholder="Contame qué necesitás..."></textarea>
         </div>
 
         <button
@@ -114,17 +132,17 @@ const {
           class="cta-button w-full flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span id="btn-text">Enviar mensaje</span>
-          <svg 
+          <svg
             id="btn-icon"
-            xmlns="http://www.w3.org/2000/svg" 
-            width="18" 
-            height="18" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
             class="group-hover:translate-x-1 transition-transform"
           >
             <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -134,35 +152,55 @@ const {
       </form>
 
       <!-- Mensaje de Éxito -->
-      <div 
-        id="form-success" 
+      <div
+        id="form-success"
         class="hidden py-12 px-8 bg-space border border-primary rounded-sm text-center animate-in fade-in zoom-in duration-500"
         role="status"
         aria-live="polite"
         tabindex="-1"
       >
         <div class="flex flex-col items-center gap-6">
-          <div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center bg-primary/5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+          <div
+            class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center bg-primary/5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-primary"
+            >
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
           </div>
           <div class="space-y-2">
-            <h3 class="text-xl font-display text-cream font-semibold">¡Gracias!</h3>
-            <p class="font-body font-light text-cream/90 text-lg">Tu mensaje ha sido enviado correctamente.</p>
+            <h3 class="text-xl font-display text-cream font-semibold">
+              ¡Gracias!
+            </h3>
+            <p class="font-body font-light text-cream/90 text-lg">
+              Tu mensaje ha sido enviado correctamente.
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Mensaje de Error -->
-      <div 
-        id="form-error" 
+      <div
+        id="form-error"
         class="hidden mt-6 p-6 bg-red-900/10 border border-red-900/20 rounded-sm text-center"
         role="alert"
         aria-live="assertive"
         tabindex="-1"
       >
-        <p class="font-body font-light text-red-400">Hubo un error al enviar el mensaje. Por favor, reintentá o escribime por WhatsApp.</p>
+        <p class="font-body font-light text-red-400">
+          Hubo un error al enviar el mensaje. Por favor, reintentá o escribime
+          por WhatsApp.
+        </p>
       </div>
 
       <div class="text-center mt-8" id="whatsapp-container">
@@ -181,64 +219,73 @@ const {
 
 <script>
   function initContact() {
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const successMsg = document.getElementById('form-success');
-    const errorMsg = document.getElementById('form-error');
-    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-    const btnText = document.getElementById('btn-text');
-    const btnIcon = document.getElementById('btn-icon');
-    const whatsappContainer = document.getElementById('whatsapp-container');
-    
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const successMsg = document.getElementById("form-success");
+    const errorMsg = document.getElementById("form-error");
+    const submitBtn = document.getElementById(
+      "submit-btn",
+    ) as HTMLButtonElement;
+    const btnText = document.getElementById("btn-text");
+    const btnIcon = document.getElementById("btn-icon");
+    const whatsappContainer = document.getElementById("whatsapp-container");
+
     if (form && successMsg && errorMsg && submitBtn && btnText) {
       const originalBtnText = btnText.textContent;
 
-      form.addEventListener('submit', async (e) => {
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        
+
         // 1. Estado de carga
         submitBtn.disabled = true;
         btnText.textContent = "Enviando…";
-        if (btnIcon) btnIcon.classList.add('hidden');
-        errorMsg.classList.add('hidden');
-        
+        if (btnIcon) btnIcon.classList.add("hidden");
+        errorMsg.classList.add("hidden");
+
         // 2. Preparar datos para Netlify
         const formData = new FormData(form);
         const body = new URLSearchParams(formData as any).toString();
-        
+
         try {
           const response = await fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: body,
           });
-          
+
           if (response.ok) {
             // Ocultar formulario y mostrar éxito
-            form.classList.add('opacity-0', 'pointer-events-none');
-            if (whatsappContainer) whatsappContainer.classList.add('opacity-0', 'pointer-events-none');
-            
+            form.classList.add("opacity-0", "pointer-events-none");
+            if (whatsappContainer)
+              whatsappContainer.classList.add(
+                "opacity-0",
+                "pointer-events-none",
+              );
+
             setTimeout(() => {
-              form.classList.add('hidden');
-              if (whatsappContainer) whatsappContainer.classList.add('hidden');
-              
-              successMsg.classList.remove('hidden');
+              form.classList.add("hidden");
+              if (whatsappContainer) whatsappContainer.classList.add("hidden");
+
+              successMsg.classList.remove("hidden");
               successMsg.focus();
-              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              successMsg.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
             }, 500);
           } else {
-            throw new Error('Error en la respuesta de Netlify');
+            throw new Error("Error en la respuesta de Netlify");
           }
         } catch (error) {
-          console.error('Error al enviar formulario:', error);
-          
+          console.error("Error al enviar formulario:", error);
+
           // Restaurar botón
           submitBtn.disabled = false;
           btnText.textContent = originalBtnText;
-          if (btnIcon) btnIcon.classList.remove('hidden');
-          
-          errorMsg.classList.remove('hidden');
+          if (btnIcon) btnIcon.classList.remove("hidden");
+
+          errorMsg.classList.remove("hidden");
           errorMsg.focus();
-          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          errorMsg.scrollIntoView({ behavior: "smooth", block: "center" });
         }
       });
     }
